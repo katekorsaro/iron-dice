@@ -8,15 +8,15 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
-- [] #5: support single die notation with modifier such as d20+2, d10-3
 - [] #6: error handling and propagation during parse for Roller
 
 # doing
 
-- [] #8: clen the messed up code
 
 # done
 
+- [x] #5: support single die notation with modifier such as d20+2, d10-3
+- [x] #8: clen the messed up code
 - [x] #7: split unit tests
 - [x] #4: support negative modifier notation such as 3d6-3
 - [x] #3: support modifier notation such as 3d6+2, d20+5
