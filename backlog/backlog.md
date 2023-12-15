@@ -8,8 +8,6 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # task
 
-- [] #4: start writing some minimal rust doc
-
 - [] #3: support modifier notation such as 3d6+2, d20+5
 
 - [x] #2: support single die shorthand notation such as d10, d6
