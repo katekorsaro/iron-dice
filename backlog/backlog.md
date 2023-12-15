@@ -8,7 +8,11 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # task
 
-- [] #3: support modifier notation such as 3d6+2, d20+5
+- [] #5: support single die notation with modifier such as d20+2, d10-3
+
+- [] #4: support negative modifier notation such as 3d6-3, d6-2
+
+- [x] #3: support modifier notation such as 3d6+2, d20+5
 
 - [x] #2: support single die shorthand notation such as d10, d6
 
