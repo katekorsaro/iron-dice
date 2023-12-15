@@ -14,6 +14,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # done
 
+- [x] #10: refactor test in 2 categories: parse, roll
 - [x] #6: error handling and propagation during parse for Roller
 - [x] #9: code cleaning (unwrap, parse)
 - [x] #5: support single die notation with modifier such as d20+2, d10-3

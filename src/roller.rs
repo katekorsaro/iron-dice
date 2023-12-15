@@ -69,11 +69,13 @@ impl FromStr for Roller {
         // handling negative modifier
         let sign = if descriptor.contains('-') { -1 } else { 1 };
 
+        // tokenization
         let tokens: Vec<_> = descriptor
             .split(&['d', '+', '-'])
             .filter(|x| !x.is_empty())
             .collect();
 
+        // output
         let descriptor: (usize, isize, Option<isize>) = match tokens.len() {
             2 => (
                 tokens[0].parse().map_err(|_| RollerErr::Generic)?,
@@ -93,25 +95,25 @@ impl FromStr for Roller {
 }
 
 #[cfg(test)]
-mod unit_tests {
+mod parse {
     use super::*;
 
     #[test]
-    fn parse_standard() {
+    fn standard() {
         let r: Roller = String::from("3d6").parse().unwrap();
         assert_eq!(r.dice, 3);
         assert_eq!(r.sides, 6);
     }
 
     #[test]
-    fn parse_single_die() {
+    fn single_die() {
         let r: Roller = String::from("d10").parse().unwrap();
         assert_eq!(r.dice, 1);
         assert_eq!(r.sides, 10);
     }
 
     #[test]
-    fn parse_standard_and_modifier() {
+    fn standard_and_modifier() {
         let r: Roller = String::from("3d6+4").parse().unwrap();
         assert_eq!(r.dice, 3);
         assert_eq!(r.sides, 6);
@@ -119,7 +121,7 @@ mod unit_tests {
     }
 
     #[test]
-    fn parse_standard_and_negative_modifier() {
+    fn standard_and_negative_modifier() {
         let r: Roller = String::from("3d6-4").parse().unwrap();
         assert_eq!(r.dice, 3);
         assert_eq!(r.sides, 6);
@@ -127,15 +129,19 @@ mod unit_tests {
     }
 
     #[test]
-    fn parse_single_die_with_modifier() {
+    fn single_die_with_modifier() {
         let r: Roller = String::from("d6-4").parse().unwrap();
         assert_eq!(r.dice, 1);
         assert_eq!(r.sides, 6);
         assert_eq!(r.modifier, Some(-4));
     }
+}
 
+#[cfg(test)]
+mod roll {
+    use super::*;
     #[test]
-    fn roll_standard() {
+    fn standard() {
         let mut r: Roller = String::from("3d6").parse().unwrap();
         let (dice_result, final_result) = r.roll();
         assert_eq!(dice_result.len(), 3);
@@ -146,7 +152,7 @@ mod unit_tests {
     }
 
     #[test]
-    fn roll_single_die() {
+    fn single_die() {
         let mut r: Roller = String::from("d20").parse().unwrap();
         for _ in 1..=1000 {
             let (dice_result, final_result) = r.roll();
@@ -156,7 +162,7 @@ mod unit_tests {
     }
 
     #[test]
-    fn roll_standard_with_modifier() {
+    fn standard_with_modifier() {
         let mut r: Roller = String::from("1d20+20").parse().unwrap();
         for _ in 1..=1000 {
             let (dice_result, final_result) = r.roll();
@@ -166,7 +172,7 @@ mod unit_tests {
     }
 
     #[test]
-    fn roll_standard_with_negative_modifier() {
+    fn standard_with_negative_modifier() {
         let mut r: Roller = String::from("1d20-20").parse().unwrap();
         for _ in 1..=1000 {
             let (dice_result, final_result) = r.roll();
@@ -176,7 +182,7 @@ mod unit_tests {
     }
 
     #[test]
-    fn roll_standard_single_die_with_negative_modifier() {
+    fn standard_single_die_with_negative_modifier() {
         let mut r: Roller = String::from("d20-20").parse().unwrap();
         for _ in 1..=1000 {
             let (dice_result, final_result) = r.roll();
