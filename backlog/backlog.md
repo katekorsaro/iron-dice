@@ -8,9 +8,11 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # task
 
+- [] #4: start writing some minimal rust doc
+
 - [] #3: support modifier notation such as 3d6+2, d20+5
 
-- [] #2: support single die shorthand notation such as d10, d6
+- [x] #2: support single die shorthand notation such as d10, d6
 
 - [x] #1: create a roller object that con be created from a string (DICE) and has a
   method to roll dice. It returns a tuple with a Vector of result plus the final
