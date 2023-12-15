@@ -4,9 +4,16 @@ use std::str::FromStr;
 
 /// A die roller engine. Given a valid string such as "3d6", "d20", will generate a roll result.
 pub struct Roller {
+    /// number of dice to throw
     dice: usize,
+
+    /// number of side per die
     sides: isize,
+
+    /// optional modifier per roll
     modifier: Option<isize>,
+
+    /// random number generator
     rng: ThreadRng,
 }
 
@@ -24,9 +31,11 @@ impl Roller {
     /// Generates a roll result. The result will hold a Vector of die results as well as the sum
     pub fn roll(&mut self) -> (Vec<isize>, isize) {
         let mut die_results: Vec<isize> = Vec::new();
+
         for _ in 1..=self.dice {
             die_results.push(self.rng.gen_range(1..=self.sides));
         }
+
         (
             die_results.clone(),
             die_results.iter().sum::<isize>() + self.modifier.unwrap_or(0),
@@ -43,17 +52,21 @@ impl Roller {
 /// Error returned while parsing the dice notation
 pub enum RollerErr {
     None,
+    Generic,
 }
 
+/// for idiomatic parsing
 impl FromStr for Roller {
     type Err = RollerErr;
 
     fn from_str(descriptor: &str) -> Result<Roller, RollerErr> {
+        // handling single die scenario
         let mut descriptor: String = String::from(descriptor);
         if descriptor.starts_with('d') {
             descriptor.insert(0, '1');
         }
 
+        // handling negative modifier
         let sign = if descriptor.contains('-') { -1 } else { 1 };
 
         let tokens: Vec<_> = descriptor
@@ -114,7 +127,7 @@ mod unit_tests {
     }
 
     #[test]
-    fn parse_single_die_with_modifier () {
+    fn parse_single_die_with_modifier() {
         let r: Roller = String::from("d6-4").parse().unwrap();
         assert_eq!(r.dice, 1);
         assert_eq!(r.sides, 6);

@@ -9,10 +9,10 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 # to do
 
 - [] #9: code cleaning (unwrap, parse)
-- [] #6: error handling and propagation during parse for Roller
 
 # doing
 
+- [] #6: error handling and propagation during parse for Roller
 
 # done
 
