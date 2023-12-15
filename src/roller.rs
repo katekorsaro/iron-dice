@@ -33,10 +33,16 @@ pub enum RollerErr {
 impl FromStr for Roller {
     type Err = RollerErr;
     fn from_str(descriptor: &str) -> Result<Roller, RollerErr> {
-        let tokens: Vec<_> = descriptor.split('d').collect();
-        let dice: usize = tokens.first().unwrap().parse().unwrap();
-        let sides: usize = tokens.get(1).unwrap().parse().unwrap();
-        Ok(Roller::new(dice, sides))
+        let tokens: Vec<_> = descriptor
+            .split('d')
+            .filter(|x| !x.is_empty())
+            .collect();
+        let descriptor: (usize, usize) = match tokens.len() {
+            1 => (1, tokens.first().unwrap().parse().unwrap()),
+            2 => (tokens.first().unwrap().parse().unwrap(), tokens.last().unwrap().parse().unwrap()),
+            _ => todo!(),
+        };
+        Ok(Roller::new(descriptor.0, descriptor.1))
     }
 }
 
@@ -49,6 +55,10 @@ mod unit_tests {
         let r: Roller = String::from("3d6").parse().unwrap();
         assert_eq!(r.dice, 3);
         assert_eq!(r.sides, 6);
+
+        let r: Roller = String::from("d10").parse().unwrap();
+        assert_eq!(r.dice, 1);
+        assert_eq!(r.sides, 10);
     }
 
     #[test]
@@ -60,5 +70,9 @@ mod unit_tests {
             assert!(die_result > 0 && die_result < 7);
         }
         assert!(final_result > 0 && final_result < 19);
+        let mut r: Roller = String::from("d20").parse().unwrap();
+        let (dice_result, final_result) = r.roll();
+        assert_eq!(dice_result.len(), 1);
+        assert!(final_result > 0 && final_result < 21);
     }
 }
