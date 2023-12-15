@@ -8,14 +8,14 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
-- [] #9: code cleaning (unwrap, parse)
 
 # doing
 
-- [] #6: error handling and propagation during parse for Roller
 
 # done
 
+- [x] #6: error handling and propagation during parse for Roller
+- [x] #9: code cleaning (unwrap, parse)
 - [x] #5: support single die notation with modifier such as d20+2, d10-3
 - [x] #8: clen the messed up code
 - [x] #7: split unit tests

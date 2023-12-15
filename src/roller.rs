@@ -76,13 +76,13 @@ impl FromStr for Roller {
 
         let descriptor: (usize, isize, Option<isize>) = match tokens.len() {
             2 => (
-                tokens.first().unwrap().parse().unwrap(),
-                tokens.last().unwrap().parse().unwrap(),
+                tokens[0].parse().map_err(|_| RollerErr::Generic)?,
+                tokens[1].parse().map_err(|_| RollerErr::Generic)?,
                 None,
             ),
             3 => (
-                tokens.first().unwrap().parse().unwrap(),
-                tokens.get(1).unwrap().parse().unwrap(),
+                tokens[0].parse().map_err(|_| RollerErr::Generic)?,
+                tokens[1].parse().map_err(|_| RollerErr::Generic)?,
                 Some(sign * tokens.last().unwrap().parse::<isize>().unwrap()),
             ),
             _ => todo!(),
