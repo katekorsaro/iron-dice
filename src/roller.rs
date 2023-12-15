@@ -13,6 +13,9 @@ pub struct Roller {
     /// optional modifier per roll
     modifier: Option<isize>,
 
+    /// optional success threashold per roll
+    success_threshold: Option<isize>,
+
     /// random number generator
     rng: ThreadRng,
 }
@@ -24,6 +27,7 @@ impl Roller {
             dice,
             sides,
             modifier: None,
+            success_threshold: None,
             rng: thread_rng(),
         }
     }
@@ -36,14 +40,31 @@ impl Roller {
             die_results.push(self.rng.gen_range(1..=self.sides));
         }
 
-        (
-            die_results.clone(),
-            die_results.iter().sum::<isize>() + self.modifier.unwrap_or(0),
-        )
+        println!("{die_results:?}");
+
+        if let Some(threshold) = self.success_threshold {
+            (
+                die_results.clone(),
+                die_results.into_iter()
+                    .map(|x| if x >= threshold { 1 } else { 0 })
+                    .sum(),
+            )
+        } else {
+            (
+                die_results.clone(),
+                die_results.into_iter()
+                    .sum::<isize>() + self.modifier.unwrap_or(0),
+            )
+        }
     }
 
     fn modifier(mut self, modifier: Option<isize>) -> Self {
         self.modifier = modifier;
+        self
+    }
+
+    fn success_threshold (mut self, success_threshold: Option<isize>) -> Self {
+        self.success_threshold = success_threshold;
         self
     }
 }
@@ -69,11 +90,26 @@ impl FromStr for Roller {
         // handling negative modifier
         let sign = if descriptor.contains('-') { -1 } else { 1 };
 
-        // tokenization
+        // tokenization of main part
+        let descriptor = descriptor.clone();
         let tokens: Vec<_> = descriptor
-            .split(&['d', '+', '-'])
+            .split(&['d', '+', '-', ' '])
             .filter(|x| !x.is_empty())
+            .filter(|x| !x.contains("sc"))
             .collect();
+
+        // sc handling
+        let success_descriptor = descriptor.clone();
+        let success_descriptor = success_descriptor
+            .split(&[' '])
+            .filter(|x| x.contains("sc"))
+            .take(1)
+            .map(String::from)
+            .map(|x| x.replace("sc", ""))
+            .map(|x| x.parse::<isize>().ok())
+            .collect::<Vec<Option<isize>>>()
+            .pop()
+            .flatten();
 
         // output
         let descriptor: (usize, isize, Option<isize>) = match tokens.len() {
@@ -90,7 +126,11 @@ impl FromStr for Roller {
             _ => todo!(),
         };
 
-        Ok(Roller::new(descriptor.0, descriptor.1).modifier(descriptor.2))
+        Ok(
+            Roller::new(descriptor.0, descriptor.1)
+            .modifier(descriptor.2)
+            .success_threshold(success_descriptor)
+            )
     }
 }
 
@@ -134,6 +174,13 @@ mod parse {
         assert_eq!(r.dice, 1);
         assert_eq!(r.sides, 6);
         assert_eq!(r.modifier, Some(-4));
+    }
+    #[test]
+    fn success_threshold () {
+        let r: Roller = String::from("3d6 sc5").parse().unwrap();
+        assert_eq!(r.dice, 3);
+        assert_eq!(r.sides, 6);
+        assert_eq!(r.success_threshold, Some(5));
     }
 }
 
@@ -188,6 +235,14 @@ mod roll {
             let (dice_result, final_result) = r.roll();
             assert_eq!(dice_result.len(), 1);
             assert!(final_result > -20 && final_result < 1);
+        }
+    }
+    #[test]
+    fn standard_success_counting () {
+        let mut r: Roller = String::from("6d6 sc1").parse().unwrap();
+        let (_, final_result) = r.roll();
+        for _ in 1..=1000 {
+            assert_eq!(final_result, 6);
         }
     }
 }

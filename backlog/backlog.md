@@ -8,6 +8,8 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
+- [] #15: handling checks suche as > < <= >=
+
 - [](to be refined) #14: handling die expressions...
 
 - [] #13: handling exploding dice and counting success with notation "3d6 ex6
@@ -17,12 +19,11 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 - [] #12: handling exploding dice with notation "3d6 ex5" standing for "throw
   3d6, for every die showing 5 or more, throw another die. Yield the total sum"
 
+# doing
+
 - [] #11: handling "success" dice with notation "3d6 sc5" standing for "throw
   3d6 and count every die greater than or equal to 5". sc stands for success
   count.
-
-# doing
-
 
 # done
 
