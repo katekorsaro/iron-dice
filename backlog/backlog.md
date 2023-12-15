@@ -8,8 +8,9 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
-- [] #6: error handling and propagation during parse for Roller
+- [] #8: clen the messed up code
 - [] #5: support single die notation with modifier such as d20+2, d10-3
+- [] #6: error handling and propagation during parse for Roller
 
 # doing
 
