@@ -40,20 +40,18 @@ impl Roller {
             die_results.push(self.rng.gen_range(1..=self.sides));
         }
 
-        println!("{die_results:?}");
-
         if let Some(threshold) = self.success_threshold {
             (
                 die_results.clone(),
-                die_results.into_iter()
+                die_results
+                    .into_iter()
                     .map(|x| if x >= threshold { 1 } else { 0 })
                     .sum(),
             )
         } else {
             (
                 die_results.clone(),
-                die_results.into_iter()
-                    .sum::<isize>() + self.modifier.unwrap_or(0),
+                die_results.into_iter().sum::<isize>() + self.modifier.unwrap_or(0),
             )
         }
     }
@@ -63,7 +61,7 @@ impl Roller {
         self
     }
 
-    fn success_threshold (mut self, success_threshold: Option<isize>) -> Self {
+    fn success_threshold(mut self, success_threshold: Option<isize>) -> Self {
         self.success_threshold = success_threshold;
         self
     }
@@ -126,11 +124,9 @@ impl FromStr for Roller {
             _ => todo!(),
         };
 
-        Ok(
-            Roller::new(descriptor.0, descriptor.1)
+        Ok(Roller::new(descriptor.0, descriptor.1)
             .modifier(descriptor.2)
-            .success_threshold(success_descriptor)
-            )
+            .success_threshold(success_descriptor))
     }
 }
 
@@ -176,7 +172,7 @@ mod parse {
         assert_eq!(r.modifier, Some(-4));
     }
     #[test]
-    fn success_threshold () {
+    fn success_threshold() {
         let r: Roller = String::from("3d6 sc5").parse().unwrap();
         assert_eq!(r.dice, 3);
         assert_eq!(r.sides, 6);
@@ -238,7 +234,7 @@ mod roll {
         }
     }
     #[test]
-    fn standard_success_counting () {
+    fn standard_success_counting() {
         let mut r: Roller = String::from("6d6 sc1").parse().unwrap();
         let (_, final_result) = r.roll();
         for _ in 1..=1000 {
