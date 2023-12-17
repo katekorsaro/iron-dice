@@ -68,6 +68,21 @@ impl Roller {
         self.success_threshold = success_threshold;
         self
     }
+
+    fn parse_success_descriptor (descriptor: &str) -> Option<u32> {
+        // sc handling
+        let success_descriptor = descriptor
+            .split(&[' '])
+            .filter(|x| x.contains("sc"))
+            .take(1)
+            .map(|x| x.replace("sc", ""))
+            .map(|x| x.parse::<u32>().ok())
+            .collect::<Vec<Option<u32>>>()
+            .pop()
+            .flatten();
+        
+        success_descriptor
+    }
 }
 
 #[derive(Debug)]
@@ -99,18 +114,7 @@ impl FromStr for Roller {
             .filter(|x| !x.contains("sc"))
             .collect();
 
-        // sc handling
-        let success_descriptor = descriptor.clone();
-        let success_descriptor = success_descriptor
-            .split(&[' '])
-            .filter(|x| x.contains("sc"))
-            .take(1)
-            .map(String::from)
-            .map(|x| x.replace("sc", ""))
-            .map(|x| x.parse::<u32>().ok())
-            .collect::<Vec<Option<u32>>>()
-            .pop()
-            .flatten();
+        let success_descriptor = Roller::parse_success_descriptor(&descriptor);
 
         // output
         let descriptor: (u32, i32, Option<i32>) = match tokens.len() {
@@ -131,6 +135,7 @@ impl FromStr for Roller {
             .modifier(descriptor.2)
             .success_threshold(success_descriptor))
     }
+
 }
 
 #[cfg(test)]
