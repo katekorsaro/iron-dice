@@ -11,16 +11,10 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 - [ ] #17: define differnt types of success while counting successes. 4d10 sc9 sv10:2 fv1:-1 standing
   for: throw 4d10 count success on a 9 or more. On a 10 add 1 more success, on a 1 subtract 1
   success
-
-- [ ] #16: refactor use of isize and usize
-
 - [ ] #15: handling checks such as > < <= >=
-
 - [ ](to be refined) #14: handling die expressions...
-
 - [ ] #13: handling exploding dice and counting success with notation "3d6 ex6 sc4" standing for
   "throw 3d6, explode every die showing 6 and count every die showing 4 or more"
-
 - [ ] #12: handling exploding dice with notation "3d6 ex5" standing for "throw 3d6, for every die
   showing 5 or more, throw another die. Yield the total sum"
 
@@ -29,6 +23,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # done
 
+- [x] #16: refactor use of isize and usize
 - [x] #11: handling "success" dice with notation "3d6 sc5" standing for "throw 3d6 and count every
   die greater than or equal to 5". sc stands for success count.
 - [x] #10: refactor test in 2 categories: parse, roll

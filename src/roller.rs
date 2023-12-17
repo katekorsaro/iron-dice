@@ -5,16 +5,16 @@ use std::str::FromStr;
 /// A die roller engine. Given a valid string such as "3d6", "d20", will generate a roll result.
 pub struct Roller {
     /// number of dice to throw
-    dice: usize,
+    dice: u32,
 
     /// number of side per die
-    sides: isize,
+    sides: u32,
 
     /// optional modifier per roll
-    modifier: Option<isize>,
+    modifier: Option<i32>,
 
     /// optional success threashold per roll
-    success_threshold: Option<isize>,
+    success_threshold: Option<u32>,
 
     /// random number generator
     rng: ThreadRng,
@@ -22,7 +22,7 @@ pub struct Roller {
 
 impl Roller {
     /// Creates a simple roller
-    pub fn new(dice: usize, sides: isize) -> Self {
+    pub fn new(dice: u32, sides: u32) -> Self {
         Self {
             dice,
             sides,
@@ -33,11 +33,14 @@ impl Roller {
     }
 
     /// Generates a roll result. The result will hold a Vector of die results as well as the sum
-    pub fn roll(&mut self) -> (Vec<isize>, isize) {
-        let mut die_results: Vec<isize> = Vec::new();
+    pub fn roll(&mut self) -> (Vec<i32>, i32) {
+        let mut die_results: Vec<i32> = Vec::new();
 
         for _ in 1..=self.dice {
-            die_results.push(self.rng.gen_range(1..=self.sides));
+            die_results.push(
+                self.rng.gen_range(1..=self.sides)
+                .try_into().unwrap()
+                );
         }
 
         if let Some(threshold) = self.success_threshold {
@@ -45,23 +48,23 @@ impl Roller {
                 die_results.clone(),
                 die_results
                     .into_iter()
-                    .map(|x| if x >= threshold { 1 } else { 0 })
+                    .map(|x| if x >= threshold.try_into().unwrap() { 1 } else { 0 })
                     .sum(),
             )
         } else {
             (
                 die_results.clone(),
-                die_results.into_iter().sum::<isize>() + self.modifier.unwrap_or(0),
+                die_results.into_iter().sum::<i32>() + self.modifier.unwrap_or(0),
             )
         }
     }
 
-    fn modifier(mut self, modifier: Option<isize>) -> Self {
+    fn modifier(mut self, modifier: Option<i32>) -> Self {
         self.modifier = modifier;
         self
     }
 
-    fn success_threshold(mut self, success_threshold: Option<isize>) -> Self {
+    fn success_threshold(mut self, success_threshold: Option<u32>) -> Self {
         self.success_threshold = success_threshold;
         self
     }
@@ -104,13 +107,13 @@ impl FromStr for Roller {
             .take(1)
             .map(String::from)
             .map(|x| x.replace("sc", ""))
-            .map(|x| x.parse::<isize>().ok())
-            .collect::<Vec<Option<isize>>>()
+            .map(|x| x.parse::<u32>().ok())
+            .collect::<Vec<Option<u32>>>()
             .pop()
             .flatten();
 
         // output
-        let descriptor: (usize, isize, Option<isize>) = match tokens.len() {
+        let descriptor: (u32, i32, Option<i32>) = match tokens.len() {
             2 => (
                 tokens[0].parse().map_err(|_| RollerErr::Generic)?,
                 tokens[1].parse().map_err(|_| RollerErr::Generic)?,
@@ -119,12 +122,12 @@ impl FromStr for Roller {
             3 => (
                 tokens[0].parse().map_err(|_| RollerErr::Generic)?,
                 tokens[1].parse().map_err(|_| RollerErr::Generic)?,
-                Some(sign * tokens.last().unwrap().parse::<isize>().unwrap()),
+                Some(sign * tokens.last().unwrap().parse::<i32>().unwrap()),
             ),
             _ => todo!(),
         };
 
-        Ok(Roller::new(descriptor.0, descriptor.1)
+        Ok(Roller::new(descriptor.0, descriptor.1.try_into().unwrap())
             .modifier(descriptor.2)
             .success_threshold(success_descriptor))
     }
