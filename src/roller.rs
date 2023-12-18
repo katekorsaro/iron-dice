@@ -13,8 +13,11 @@ pub struct Roller {
     /// optional modifier per roll
     modifier: Option<i32>,
 
-    /// optional success threashold per roll
+    /// optional success threshold per roll
     success_threshold: Option<u32>,
+
+    /// optional explode threshold per die
+    explode_threshold: Option<u32>,
 
     /// random number generator
     rng: ThreadRng,
@@ -28,6 +31,7 @@ impl Roller {
             sides,
             modifier: None,
             success_threshold: None,
+            explode_threshold: None,
             rng: thread_rng(),
         }
     }
@@ -37,10 +41,7 @@ impl Roller {
         let mut die_results: Vec<i32> = Vec::new();
 
         for _ in 1..=self.dice {
-            die_results.push(
-                self.rng.gen_range(1..=self.sides)
-                .try_into().unwrap()
-                );
+            die_results.push(self.rng.gen_range(1..=self.sides).try_into().unwrap());
         }
 
         if let Some(threshold) = self.success_threshold {
@@ -48,7 +49,13 @@ impl Roller {
                 die_results.clone(),
                 die_results
                     .into_iter()
-                    .map(|x| if x >= threshold.try_into().unwrap() { 1 } else { 0 })
+                    .map(|x| {
+                        if x >= threshold.try_into().unwrap() {
+                            1
+                        } else {
+                            0
+                        }
+                    })
                     .sum(),
             )
         } else {
@@ -69,7 +76,12 @@ impl Roller {
         self
     }
 
-    fn parse_success_descriptor (descriptor: &str) -> Option<u32> {
+    fn explode_threshold(mut self, explode_threshold: Option<u32>) -> Self {
+        self.explode_threshold = explode_threshold;
+        self
+    }
+
+    fn parse_success_descriptor(descriptor: &str) -> Option<u32> {
         // sc handling
         let success_descriptor = descriptor
             .split(&[' '])
@@ -80,8 +92,24 @@ impl Roller {
             .collect::<Vec<Option<u32>>>()
             .pop()
             .flatten();
-        
+
         success_descriptor
+    }
+
+    fn parse_explode_descriptor(descriptor: &str) -> Option<u32> {
+        // ex handling
+        let explode_descriptor = descriptor
+            .split(&[' '])
+            .filter(|x| x.contains("ex"))
+            .take(1)
+            .map(|x| x.replace("ex", ""))
+            .map(|x| x.parse::<u32>().ok())
+            .collect::<Vec<Option<u32>>>()
+            .pop()
+            .flatten();
+
+        println!("{:?}", &explode_descriptor);
+        explode_descriptor
     }
 }
 
@@ -108,13 +136,21 @@ impl FromStr for Roller {
 
         // tokenization of main part
         let descriptor = descriptor.clone();
-        let tokens: Vec<_> = descriptor
-            .split(&['d', '+', '-', ' '])
+
+        // considering only the first part
+        let tokens: String = descriptor.split(&[' ']).take(1).collect::<String>();
+
+        // tokenisation
+        let tokens: Vec<_> = tokens
+            .split(&['d', '+', '-'])
             .filter(|x| !x.is_empty())
-            .filter(|x| !x.contains("sc"))
             .collect();
 
+        // parsing success threshold
         let success_descriptor = Roller::parse_success_descriptor(&descriptor);
+
+        // parsing explode threshold
+        let explode_descriptor = Roller::parse_explode_descriptor(&descriptor);
 
         // output
         let descriptor: (u32, i32, Option<i32>) = match tokens.len() {
@@ -133,9 +169,9 @@ impl FromStr for Roller {
 
         Ok(Roller::new(descriptor.0, descriptor.1.try_into().unwrap())
             .modifier(descriptor.2)
-            .success_threshold(success_descriptor))
+            .success_threshold(success_descriptor)
+            .explode_threshold(explode_descriptor))
     }
-
 }
 
 #[cfg(test)]
@@ -179,12 +215,21 @@ mod parse {
         assert_eq!(r.sides, 6);
         assert_eq!(r.modifier, Some(-4));
     }
+
     #[test]
     fn success_threshold() {
         let r: Roller = String::from("3d6 sc5").parse().unwrap();
         assert_eq!(r.dice, 3);
         assert_eq!(r.sides, 6);
         assert_eq!(r.success_threshold, Some(5));
+    }
+
+    #[test]
+    fn explode_threshold() {
+        let r: Roller = String::from("3d6 ex4").parse().unwrap();
+        assert_eq!(r.dice, 3);
+        assert_eq!(r.sides, 6);
+        assert_eq!(r.explode_threshold, Some(4));
     }
 }
 
@@ -244,9 +289,19 @@ mod roll {
     #[test]
     fn standard_success_counting() {
         let mut r: Roller = String::from("6d6 sc1").parse().unwrap();
-        let (_, final_result) = r.roll();
         for _ in 1..=1000 {
+            let (_, final_result) = r.roll();
             assert_eq!(final_result, 6);
+        }
+    }
+    #[test]
+    fn standard_exploding () {
+        let mut r: Roller = String::from("1d6 ex6").parse().unwrap();
+        for _ in 1..=1000 {
+            let (results, _) = r.roll();
+            if results.len() == 1 {
+                assert!(results[0] < 6);
+            }
         }
     }
 }
