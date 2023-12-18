@@ -38,32 +38,55 @@ impl Roller {
 
     /// Generates a roll result. The result will hold a Vector of die results as well as the sum
     pub fn roll(&mut self) -> (Vec<i32>, i32) {
-        let mut die_results: Vec<i32> = Vec::new();
+        let mut results: Vec<i32> = Vec::new();
 
         for _ in 1..=self.dice {
-            die_results.push(self.rng.gen_range(1..=self.sides).try_into().unwrap());
+            let die_results = self.roll_one();
+            for result in die_results {
+                results.push(result);
+            }
         }
 
-        if let Some(threshold) = self.success_threshold {
-            (
-                die_results.clone(),
-                die_results
-                    .into_iter()
-                    .map(|x| {
-                        if x >= threshold.try_into().unwrap() {
-                            1
-                        } else {
-                            0
-                        }
-                    })
-                    .sum(),
-            )
-        } else {
-            (
-                die_results.clone(),
-                die_results.into_iter().sum::<i32>() + self.modifier.unwrap_or(0),
-            )
+        let sum: i32 = match self.modifier {
+            None => results.clone().into_iter().sum(),
+            Some(modifier) => results.clone().into_iter().sum::<i32>() + modifier,
+        };
+
+        (results, sum)
+    }
+
+    fn roll_one(&mut self) -> Vec<i32> {
+        let mut results: Vec<i32> = Vec::new();
+        loop {
+            let result = self.rng.gen_range(1..=self.sides).try_into().unwrap();
+
+            // check for success roll:
+            // if no success, then normal result
+            // else 1 for success, 0 otherwise
+            match self.success_threshold {
+                None => results.push(result),
+                Some(threshold) => {
+                    if result >= threshold.try_into().unwrap() {
+                        results.push(1);
+                    } else {
+                        results.push(0);
+                    }
+                }
+            }
+
+            // check for exit conditions:
+            // if there's now threshold or
+            // the result is under the threshold
+            match self.explode_threshold {
+                None => break,
+                Some(threshold) => {
+                    if result < threshold.try_into().unwrap() {
+                        break;
+                    }
+                }
+            }
         }
+        results
     }
 
     fn modifier(mut self, modifier: Option<i32>) -> Self {
@@ -295,13 +318,25 @@ mod roll {
         }
     }
     #[test]
-    fn standard_exploding () {
+    fn standard_exploding() {
         let mut r: Roller = String::from("1d6 ex6").parse().unwrap();
         for _ in 1..=1000 {
             let (results, _) = r.roll();
-            if results.len() == 1 {
-                assert!(results[0] < 6);
-            }
+            results.iter()
+                .take(results.len()-1)
+                .for_each(|x| assert!(*x == 6));
+            assert!(*results.last().unwrap() < 6);
+        }
+    }
+    #[test]
+    fn exploding_success_threshold () {
+        let mut r: Roller = String::from("1d6 ex6 sc6").parse().unwrap();
+        for _ in 1..=1000 {
+            let (results, _) = r.roll();
+            results.iter()
+                .take(results.len()-1)
+                .for_each(|x| assert!(*x == 1));
+            assert!(*results.last().unwrap() == 0);
         }
     }
 }

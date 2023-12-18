@@ -18,11 +18,11 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] #12: handling exploding dice with notation "3d6 ex5" standing for "throw 3d6, for every die
-  showing 5 or more, throw another die. Yield the total sum"
 
 # done
 
+- [x] #12: handling exploding dice with notation "3d6 ex5" standing for "throw 3d6, for every die
+  showing 5 or more, throw another die. Yield the total sum"
 - [x] #16: refactor use of isize and usize
 - [x] #11: handling "success" dice with notation "3d6 sc5" standing for "throw 3d6 and count every
   die greater than or equal to 5". sc stands for success count.
