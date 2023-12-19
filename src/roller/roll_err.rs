@@ -4,4 +4,3 @@ pub enum RollerErr {
     None,
     Generic,
 }
-

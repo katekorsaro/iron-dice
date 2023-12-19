@@ -1,5 +1,5 @@
-use super::Roller;
 use super::super::RollResult;
+use super::Roller;
 
 impl Roller {
     /// Generates a roll result. The result will hold a Vector of die results as well as the sum
@@ -26,7 +26,7 @@ impl Roller {
                 results.sort();
                 results.reverse();
                 results.iter().take(max.try_into().unwrap()).sum()
-            },
+            }
         };
 
         // considering min
@@ -35,7 +35,7 @@ impl Roller {
             Some(min) => {
                 results.sort();
                 results.iter().take(min.try_into().unwrap()).sum()
-            },
+            }
         };
 
         RollResult::new(results, sum)

@@ -1,11 +1,11 @@
 use rand::rngs::ThreadRng;
-use rand::{thread_rng};
+use rand::thread_rng;
 use std::str::FromStr;
 
-mod parse;
-mod roll;
 mod impl_roller_roll;
 mod impl_roller_roll_one;
+mod parse;
+mod roll;
 
 use super::roll_err::*;
 
@@ -66,12 +66,12 @@ impl Roller {
         self
     }
 
-    fn take_max (mut self, take_max: Option<u32>) -> Self {
+    fn take_max(mut self, take_max: Option<u32>) -> Self {
         self.take_max = take_max;
         self
     }
 
-    fn take_min (mut self, take_min: Option<u32>) -> Self {
+    fn take_min(mut self, take_min: Option<u32>) -> Self {
         self.take_min = take_min;
         self
     }
@@ -106,7 +106,7 @@ impl Roller {
         explode_descriptor
     }
 
-    fn parse_take_max_descriptor (descriptor: &str) -> Option<u32> {
+    fn parse_take_max_descriptor(descriptor: &str) -> Option<u32> {
         // maxN handling
         let take_max_descriptor = descriptor
             .split(&[' '])
@@ -121,7 +121,7 @@ impl Roller {
         take_max_descriptor
     }
 
-    fn parse_take_min_descriptor (descriptor: &str) -> Option<u32> {
+    fn parse_take_min_descriptor(descriptor: &str) -> Option<u32> {
         // minN handling
         let take_min_descriptor = descriptor
             .split(&[' '])
@@ -195,7 +195,6 @@ impl FromStr for Roller {
             .success_threshold(success_descriptor)
             .explode_threshold(explode_descriptor)
             .take_max(take_max_descriptor)
-            .take_min(take_min_descriptor)
-            )
+            .take_min(take_min_descriptor))
     }
 }

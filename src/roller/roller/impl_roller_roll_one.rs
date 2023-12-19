@@ -1,5 +1,5 @@
-use rand::Rng;
 use super::Roller;
+use rand::Rng;
 
 impl Roller {
     pub fn roll_one(&mut self) -> Vec<i32> {

@@ -53,7 +53,7 @@ fn explode_threshold() {
 }
 
 #[test]
-fn max_x_of_y () {
+fn max_x_of_y() {
     let r: super::Roller = String::from("4d6 max3").parse().unwrap();
     assert_eq!(r.dice, 4);
     assert_eq!(r.sides, 6);
@@ -61,7 +61,7 @@ fn max_x_of_y () {
 }
 
 #[test]
-fn min_x_of_y () {
+fn min_x_of_y() {
     let r: super::Roller = String::from("4d6 min3").parse().unwrap();
     assert_eq!(r.dice, 4);
     assert_eq!(r.sides, 6);
