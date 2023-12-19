@@ -8,6 +8,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
+- [ ] #22: for success counting create a separate field into RollResult
 - [ ] #21: handling operator mid with notation "5d6 mid3", meaning "throw 4d6 and yield the sum of 3
   middle dice"
 - [ ] #20: handling operator min with notation "4d6 min3", meaning "throw 4d6 and yield the sum of 3
