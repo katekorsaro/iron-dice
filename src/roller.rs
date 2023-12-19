@@ -3,6 +3,7 @@ use rand::{thread_rng, Rng};
 use std::str::FromStr;
 
 /// A struct holding dice results
+#[derive(Debug)]
 pub struct RollResult {
     pub dice: Vec<i32>,
     pub outcome: i32,
@@ -52,7 +53,7 @@ impl Roller {
     }
 
     /// Generates a roll result. The result will hold a Vector of die results as well as the sum
-    pub fn roll(&mut self) -> (Vec<i32>, i32) {
+    pub fn roll(&mut self) -> RollResult {
         let mut results: Vec<i32> = Vec::new();
 
         for _ in 1..=self.dice {
@@ -67,7 +68,7 @@ impl Roller {
             Some(modifier) => results.clone().into_iter().sum::<i32>() + modifier,
         };
 
-        (results, sum)
+        RollResult::new(results, sum)
     }
 
     fn roll_one(&mut self) -> Vec<i32> {
@@ -277,21 +278,21 @@ mod roll {
     #[test]
     fn standard() {
         let mut r: Roller = String::from("3d6").parse().unwrap();
-        let (dice_result, final_result) = r.roll();
-        assert_eq!(dice_result.len(), 3);
-        for die_result in dice_result {
-            assert!(die_result > 0 && die_result < 7);
+        let roll_result = r.roll();
+        assert_eq!(roll_result.dice.len(), 3);
+        for die in roll_result.dice {
+            assert!(die > 0 && die < 7);
         }
-        assert!(final_result > 0 && final_result < 19);
+        assert!(roll_result.outcome > 0 && roll_result.outcome < 19);
     }
 
     #[test]
     fn single_die() {
         let mut r: Roller = String::from("d20").parse().unwrap();
         for _ in 1..=1000 {
-            let (dice_result, final_result) = r.roll();
-            assert_eq!(dice_result.len(), 1);
-            assert!(final_result > 0 && final_result < 21);
+            let roll_result = r.roll();
+            assert_eq!(roll_result.dice.len(), 1);
+            assert!(roll_result.outcome > 0 && roll_result.outcome < 21);
         }
     }
 
@@ -299,9 +300,9 @@ mod roll {
     fn standard_with_modifier() {
         let mut r: Roller = String::from("1d20+20").parse().unwrap();
         for _ in 1..=1000 {
-            let (dice_result, final_result) = r.roll();
-            assert_eq!(dice_result.len(), 1);
-            assert!(final_result > 20 && final_result < 41);
+            let roll_result = r.roll();
+            assert_eq!(roll_result.dice.len(), 1);
+            assert!(roll_result.outcome > 20 && roll_result.outcome < 41);
         }
     }
 
@@ -309,9 +310,9 @@ mod roll {
     fn standard_with_negative_modifier() {
         let mut r: Roller = String::from("1d20-20").parse().unwrap();
         for _ in 1..=1000 {
-            let (dice_result, final_result) = r.roll();
-            assert_eq!(dice_result.len(), 1);
-            assert!(final_result > -20 && final_result < 1);
+            let roll_result = r.roll();
+            assert_eq!(roll_result.dice.len(), 1);
+            assert!(roll_result.outcome > -20 && roll_result.outcome < 1);
         }
     }
 
@@ -319,39 +320,39 @@ mod roll {
     fn standard_single_die_with_negative_modifier() {
         let mut r: Roller = String::from("d20-20").parse().unwrap();
         for _ in 1..=1000 {
-            let (dice_result, final_result) = r.roll();
-            assert_eq!(dice_result.len(), 1);
-            assert!(final_result > -20 && final_result < 1);
+            let roll_result = r.roll();
+            assert_eq!(roll_result.dice.len(), 1);
+            assert!(roll_result.outcome > -20 && roll_result.outcome < 1);
         }
     }
     #[test]
     fn standard_success_counting() {
         let mut r: Roller = String::from("6d6 sc1").parse().unwrap();
         for _ in 1..=1000 {
-            let (_, final_result) = r.roll();
-            assert_eq!(final_result, 6);
+            let roll_result = r.roll();
+            assert_eq!(roll_result.outcome, 6);
         }
     }
     #[test]
     fn standard_exploding() {
         let mut r: Roller = String::from("1d6 ex6").parse().unwrap();
         for _ in 1..=1000 {
-            let (results, _) = r.roll();
-            results.iter()
-                .take(results.len()-1)
+            let roll_result = r.roll();
+            roll_result.dice.iter()
+                .take(roll_result.dice.len()-1)
                 .for_each(|x| assert!(*x == 6));
-            assert!(*results.last().unwrap() < 6);
+            assert!(*roll_result.dice.last().unwrap() < 6);
         }
     }
     #[test]
     fn exploding_success_threshold () {
         let mut r: Roller = String::from("1d6 ex6 sc6").parse().unwrap();
         for _ in 1..=1000 {
-            let (results, _) = r.roll();
-            results.iter()
-                .take(results.len()-1)
+            let roll_result = r.roll();
+            roll_result.dice.iter()
+                .take(roll_result.dice.len()-1)
                 .for_each(|x| assert!(*x == 1));
-            assert!(*results.last().unwrap() == 0);
+            assert!(*roll_result.dice.last().unwrap() == 0);
         }
     }
 }
