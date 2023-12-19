@@ -2,6 +2,21 @@ use rand::rngs::ThreadRng;
 use rand::{thread_rng, Rng};
 use std::str::FromStr;
 
+/// A struct holding dice results
+pub struct RollResult {
+    pub dice: Vec<i32>,
+    pub outcome: i32,
+
+}
+
+impl RollResult {
+    pub fn new (dice: Vec<i32>, outcome: i32) -> Self {
+        Self {
+            dice, outcome
+        }
+    }
+}
+
 /// A die roller engine. Given a valid string such as "3d6", "d20", will generate a roll result.
 pub struct Roller {
     /// number of dice to throw
