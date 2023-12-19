@@ -24,10 +24,10 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] #24: refactor roller.rs in a module plus multiple files
 
 # done
 
+- [x] #24: refactor roller.rs in a module plus multiple files
 - [x] #19: draft output. Define a result struct to hold roll result.
 - [x] #13: handling exploding dice and counting success with notation "3d6 ex6 sc4" standing for
   "throw 3d6, explode every die showing 6 and count every die showing 4 or more"
