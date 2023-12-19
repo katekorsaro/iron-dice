@@ -8,7 +8,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
-- [ ] #24: refactor roller.rs in a module plus multiple files
+ -[ ] #24: test max N with exploding dice
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #22: for success counting create a separate field into RollResult
 - [ ] #21: handling operator mid with notation "5d6 mid3", meaning "throw 4d6 and yield the sum of 3
@@ -24,10 +24,11 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] #19: draft output. Define a result struct to hold roll result.
+- [ ] #24: refactor roller.rs in a module plus multiple files
 
 # done
 
+- [x] #19: draft output. Define a result struct to hold roll result.
 - [x] #13: handling exploding dice and counting success with notation "3d6 ex6 sc4" standing for
   "throw 3d6, explode every die showing 6 and count every die showing 4 or more"
 - [x] #12: handling exploding dice with notation "3d6 ex5" standing for "throw 3d6, for every die
