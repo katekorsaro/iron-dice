@@ -147,7 +147,6 @@ impl Roller {
             .pop()
             .flatten();
 
-        println!("{:?}", &explode_descriptor);
         explode_descriptor
     }
 }
