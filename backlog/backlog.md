@@ -8,14 +8,20 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
-- [ ] #15: handling checks such as > < <= >=
-- [ ](to be refined) #14: handling die expressions...
-
-# doing
-
+- [ ] #21: handling operator mid with notation "5d6 mid3", meaning "throw 4d6 and yield the sum of 3
+  middle dice"
+- [ ] #20: handling operator min with notation "4d6 min3", meaning "throw 4d6 and yield the sum of 3
+  lower dice"
+- [ ] #19: handling operator max with notation "4d6 max3", meaning "throw 4d6 and yield the sum of 3
+  higher dice"
+- [ ] #18: accept parameters from cli
 - [ ] #17: define differnt types of success while counting successes. 4d10 sc9 sv10:2 fv1:-1 standing
   for: throw 4d10 count success on a 9 or more. On a 10 add 1 more success, on a 1 subtract 1
   success
+
+# doing
+
+- [ ] #19: draft output. Define a result struct to hold roll result. Define to_string.
 
 # done
 
@@ -37,3 +43,8 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 - [x] #2: support single die shorthand notation such as d10, d6
 - [x] #1: create a roller object that con be created from a string (DICE) and has a method to roll
   dice. It returns a tuple with a Vector of result plus the final result. IE: 3d6 -> ([4,2,6], 12)
+
+# discarded
+
+- [x] #15: handling checks such as > < <= >=
+- [x] (to be refined) #14: handling die expressions...
