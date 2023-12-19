@@ -1,5 +1,5 @@
 [package]
-name = "iron-dice"
+name = "iron_dice"
 version = "0.1.0"
 edition = "2021"
 
