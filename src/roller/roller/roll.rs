@@ -144,3 +144,34 @@ fn min_x_of_y_exploding () {
         }
     }
 }
+
+#[test]
+fn min_x_of_y_with_fewer_dice () {
+    let mut r: super::Roller = String::from("2d6 min3").parse().unwrap();
+    for _ in 1..=1000 {
+        let roll_result = r.roll();
+        assert_eq!(roll_result.dice.len(), 2);
+        let mut results = roll_result.dice.clone();
+        results.sort();
+        let min3: i32 = results.iter()
+            .take(3)
+            .sum();
+        assert_eq!(min3, roll_result.outcome);
+    }
+}
+
+#[test]
+fn max_x_of_y_with_fewer_dice () {
+    let mut r: super::Roller = String::from("2d6 max3").parse().unwrap();
+    for _ in 1..=1000 {
+        let roll_result = r.roll();
+        assert_eq!(roll_result.dice.len(), 2);
+        let mut results = roll_result.dice.clone();
+        results.sort();
+        results.reverse();
+        let max3: i32 = results.iter()
+            .take(3)
+            .sum();
+        assert_eq!(max3, roll_result.outcome);
+    }
+}
