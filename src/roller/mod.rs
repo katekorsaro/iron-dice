@@ -3,8 +3,10 @@ use rand::{thread_rng, Rng};
 use std::str::FromStr;
 
 mod roll_result;
+mod roll_err;
 
 pub use roll_result::*;
+pub use roll_err::*;
 
 /// A die roller engine. Given a valid string such as "3d6", "d20", will generate a roll result.
 pub struct Roller {
@@ -171,13 +173,6 @@ impl Roller {
 
         take_max_descriptor
     }
-}
-
-#[derive(Debug)]
-/// Error returned while parsing the dice notation
-pub enum RollerErr {
-    None,
-    Generic,
 }
 
 /// for idiomatic parsing
