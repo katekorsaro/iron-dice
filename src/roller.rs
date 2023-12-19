@@ -37,6 +37,9 @@ pub struct Roller {
 
     /// random number generator
     rng: ThreadRng,
+
+    /// maximum number of dice to consider for outcome
+    take_max: Option<u32>,
 }
 
 impl Roller {
@@ -48,6 +51,7 @@ impl Roller {
             modifier: None,
             success_threshold: None,
             explode_threshold: None,
+            take_max: None,
             rng: thread_rng(),
         }
     }
@@ -120,6 +124,11 @@ impl Roller {
         self
     }
 
+    fn take_max (mut self, take_max: Option<u32>) -> Self {
+        self.take_max = take_max;
+        self
+    }
+
     fn parse_success_descriptor(descriptor: &str) -> Option<u32> {
         // sc handling
         let success_descriptor = descriptor
@@ -148,6 +157,21 @@ impl Roller {
             .flatten();
 
         explode_descriptor
+    }
+
+    fn parse_take_max_descriptor (descriptor: &str) -> Option<u32> {
+        // maxN handling
+        let take_max_descriptor = descriptor
+            .split(&[' '])
+            .filter(|x| x.contains("max"))
+            .take(1)
+            .map(|x| x.replace("max", ""))
+            .map(|x| x.parse::<u32>().ok())
+            .collect::<Vec<Option<u32>>>()
+            .pop()
+            .flatten();
+
+        take_max_descriptor
     }
 }
 
@@ -190,6 +214,9 @@ impl FromStr for Roller {
         // parsing explode threshold
         let explode_descriptor = Roller::parse_explode_descriptor(&descriptor);
 
+        // parsing max N
+        let take_max_descriptor = Roller::parse_take_max_descriptor(&descriptor);
+
         // output
         let descriptor: (u32, i32, Option<i32>) = match tokens.len() {
             2 => (
@@ -208,7 +235,9 @@ impl FromStr for Roller {
         Ok(Roller::new(descriptor.0, descriptor.1.try_into().unwrap())
             .modifier(descriptor.2)
             .success_threshold(success_descriptor)
-            .explode_threshold(explode_descriptor))
+            .explode_threshold(explode_descriptor)
+            .take_max(take_max_descriptor)
+            )
     }
 }
 
@@ -268,6 +297,14 @@ mod parse {
         assert_eq!(r.dice, 3);
         assert_eq!(r.sides, 6);
         assert_eq!(r.explode_threshold, Some(4));
+    }
+
+    #[test]
+    fn max_x_of_y () {
+        let r: Roller = String::from("4d6 max3").parse().unwrap();
+        assert_eq!(r.dice, 4);
+        assert_eq!(r.sides, 6);
+        assert_eq!(r.take_max, Some(3));
     }
 }
 
