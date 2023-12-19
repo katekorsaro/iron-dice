@@ -31,6 +31,9 @@ pub struct Roller {
 
     /// maximum number of dice to consider for outcome
     take_max: Option<u32>,
+
+    /// minimum number of dice to consider for outcome
+    take_min: Option<u32>,
 }
 
 impl Roller {
@@ -43,6 +46,7 @@ impl Roller {
             success_threshold: None,
             explode_threshold: None,
             take_max: None,
+            take_min: None,
             rng: thread_rng(),
         }
     }
@@ -64,6 +68,11 @@ impl Roller {
 
     fn take_max (mut self, take_max: Option<u32>) -> Self {
         self.take_max = take_max;
+        self
+    }
+
+    fn take_min (mut self, take_min: Option<u32>) -> Self {
+        self.take_min = take_min;
         self
     }
 
@@ -111,6 +120,21 @@ impl Roller {
 
         take_max_descriptor
     }
+
+    fn parse_take_min_descriptor (descriptor: &str) -> Option<u32> {
+        // minN handling
+        let take_min_descriptor = descriptor
+            .split(&[' '])
+            .filter(|x| x.contains("min"))
+            .take(1)
+            .map(|x| x.replace("min", ""))
+            .map(|x| x.parse::<u32>().ok())
+            .collect::<Vec<Option<u32>>>()
+            .pop()
+            .flatten();
+
+        take_min_descriptor
+    }
 }
 
 /// for idiomatic parsing
@@ -148,6 +172,9 @@ impl FromStr for Roller {
         // parsing max N
         let take_max_descriptor = Roller::parse_take_max_descriptor(&descriptor);
 
+        // parsing min N
+        let take_min_descriptor = Roller::parse_take_min_descriptor(&descriptor);
+
         // output
         let descriptor: (u32, i32, Option<i32>) = match tokens.len() {
             2 => (
@@ -168,6 +195,7 @@ impl FromStr for Roller {
             .success_threshold(success_descriptor)
             .explode_threshold(explode_descriptor)
             .take_max(take_max_descriptor)
+            .take_min(take_min_descriptor)
             )
     }
 }

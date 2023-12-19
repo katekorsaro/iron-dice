@@ -59,3 +59,11 @@ fn max_x_of_y () {
     assert_eq!(r.sides, 6);
     assert_eq!(r.take_max, Some(3));
 }
+
+#[test]
+fn min_x_of_y () {
+    let r: super::Roller = String::from("4d6 min3").parse().unwrap();
+    assert_eq!(r.dice, 4);
+    assert_eq!(r.sides, 6);
+    assert_eq!(r.take_min, Some(3));
+}
