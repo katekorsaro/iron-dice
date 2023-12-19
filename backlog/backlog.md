@@ -8,6 +8,8 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
+- [ ] #24: refactor roller.rs in a module plus multiple files
+- [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #22: for success counting create a separate field into RollResult
 - [ ] #21: handling operator mid with notation "5d6 mid3", meaning "throw 4d6 and yield the sum of 3
   middle dice"
@@ -22,7 +24,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] #19: draft output. Define a result struct to hold roll result. Define to_string.
+- [ ] #19: draft output. Define a result struct to hold roll result.
 
 # done
 
