@@ -112,3 +112,35 @@ fn max_x_of_y_exploding () {
         }
     }
 }
+
+#[test]
+fn min_x_of_y () {
+    let mut r: super::Roller = String::from("6d6 min3").parse().unwrap();
+    for _ in 1..=1000 {
+        let roll_result = r.roll();
+        assert_eq!(roll_result.dice.len(), 6);
+        let mut results = roll_result.dice.clone();
+        results.sort();
+        let min3: i32 = results.iter()
+            .take(3)
+            .sum();
+        assert_eq!(min3, roll_result.outcome);
+    }
+}
+
+#[test]
+fn min_x_of_y_exploding () {
+    let mut r: super::Roller = String::from("5d6 ex6 min3").parse().unwrap();
+    for _ in 1..=1000 {
+        let roll_result = r.roll();
+        let mut results = roll_result.dice.clone();
+        results.sort();
+        let min3: i32 = results.iter()
+            .take(3)
+            .sum();
+        assert_eq!(min3, roll_result.outcome);
+        if roll_result.dice.len() == 6 {
+            assert_eq!(roll_result.dice[5], 6);
+        }
+    }
+}

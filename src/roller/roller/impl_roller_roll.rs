@@ -29,6 +29,15 @@ impl Roller {
             },
         };
 
+        // considering min
+        let sum: i32 = match self.take_min {
+            None => sum,
+            Some(min) => {
+                results.sort();
+                results.iter().take(min.try_into().unwrap()).sum()
+            },
+        };
+
         RollResult::new(results, sum)
     }
 }
