@@ -1,11 +1,12 @@
 use rand::rngs::ThreadRng;
-use rand::{thread_rng, Rng};
+use rand::{thread_rng};
 use std::str::FromStr;
 
 mod parse;
 mod roll;
+mod impl_roller_roll;
+mod impl_roller_roll_one;
 
-use super::roll_result::*;
 use super::roll_err::*;
 
 /// A die roller engine. Given a valid string such as "3d6", "d20", will generate a roll result.
@@ -44,70 +45,6 @@ impl Roller {
             take_max: None,
             rng: thread_rng(),
         }
-    }
-
-    /// Generates a roll result. The result will hold a Vector of die results as well as the sum
-    pub fn roll(&mut self) -> RollResult {
-        let mut results: Vec<i32> = Vec::new();
-
-        for _ in 1..=self.dice {
-            let die_results = self.roll_one();
-            for result in die_results {
-                results.push(result);
-            }
-        }
-
-        // standard roll
-        let sum: i32 = match self.modifier {
-            None => results.clone().into_iter().sum(),
-            Some(modifier) => results.clone().into_iter().sum::<i32>() + modifier,
-        };
-
-        // considering max
-        let sum: i32 = match self.take_max {
-            None => sum,
-            Some(max) => {
-                results.sort();
-                results.reverse();
-                results.iter().take(max.try_into().unwrap()).sum()
-            },
-        };
-
-        RollResult::new(results, sum)
-    }
-
-    fn roll_one(&mut self) -> Vec<i32> {
-        let mut results: Vec<i32> = Vec::new();
-        loop {
-            let result = self.rng.gen_range(1..=self.sides).try_into().unwrap();
-
-            // check for success roll:
-            // if no success, then normal result
-            // else 1 for success, 0 otherwise
-            match self.success_threshold {
-                None => results.push(result),
-                Some(threshold) => {
-                    if result >= threshold.try_into().unwrap() {
-                        results.push(1);
-                    } else {
-                        results.push(0);
-                    }
-                }
-            }
-
-            // check for exit conditions:
-            // if there's now threshold or
-            // the result is under the threshold
-            match self.explode_threshold {
-                None => break,
-                Some(threshold) => {
-                    if result < threshold.try_into().unwrap() {
-                        break;
-                    }
-                }
-            }
-        }
-        results
     }
 
     fn modifier(mut self, modifier: Option<i32>) -> Self {
