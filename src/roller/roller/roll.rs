@@ -81,12 +81,13 @@ fn exploding_success_threshold () {
 
 #[test]
 fn max_x_of_y () {
-    let mut r: super::Roller = String::from("4d6 max3").parse().unwrap();
+    let mut r: super::Roller = String::from("6d6 max3").parse().unwrap();
     for _ in 1..=1000 {
         let roll_result = r.roll();
-        assert_eq!(roll_result.dice.len(), 4);
+        assert_eq!(roll_result.dice.len(), 6);
         let mut results = roll_result.dice.clone();
         results.sort();
+        results.reverse();
         let max3: i32 = results.iter()
             .take(3)
             .sum();

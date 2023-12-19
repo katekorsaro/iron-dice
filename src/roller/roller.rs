@@ -68,6 +68,7 @@ impl Roller {
             None => sum,
             Some(max) => {
                 results.sort();
+                results.reverse();
                 results.iter().take(max.try_into().unwrap()).sum()
             },
         };
