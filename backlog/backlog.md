@@ -9,7 +9,6 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 # to do
 
 - [ ] #25: refactor code a little better, see test output to improve
-- [ ] #24: test min/max x of y with a fewer dice number -> 2d6 max3
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #22: for success counting create a separate field into RollResult to store actual dice results
 - [ ] #21: handling operator mid with notation "5d6 mid3", meaning "throw 4d6 and yield the sum of 3
@@ -26,6 +25,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # done
 
+- [x] #24: test min/max x of y with a fewer dice number -> 2d6 max3
 - [x] #20: handling operator min with notation "4d6 min3", meaning "throw 4d6 and yield the sum of 3
   lower dice"
 - [x] #25: test max N with exploding dice
