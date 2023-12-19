@@ -67,9 +67,19 @@ impl Roller {
             }
         }
 
+        // standard roll
         let sum: i32 = match self.modifier {
             None => results.clone().into_iter().sum(),
             Some(modifier) => results.clone().into_iter().sum::<i32>() + modifier,
+        };
+
+        // considering max
+        let sum: i32 = match self.take_max {
+            None => sum,
+            Some(max) => {
+                results.sort();
+                results.iter().take(max.try_into().unwrap()).sum()
+            },
         };
 
         RollResult::new(results, sum)
@@ -389,6 +399,21 @@ mod roll {
                 .take(roll_result.dice.len()-1)
                 .for_each(|x| assert!(*x == 1));
             assert!(*roll_result.dice.last().unwrap() == 0);
+        }
+    }
+
+    #[test]
+    fn max_x_of_y () {
+        let mut r: Roller = String::from("4d6 max3").parse().unwrap();
+        for _ in 1..=1000 {
+            let roll_result = r.roll();
+            assert_eq!(roll_result.dice.len(), 4);
+            let mut results = roll_result.dice.clone();
+            results.sort();
+            let max3: i32 = results.iter()
+                .take(3)
+                .sum();
+            assert_eq!(max3, roll_result.outcome);
         }
     }
 }
