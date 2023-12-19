@@ -22,11 +22,11 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] #20: handling operator min with notation "4d6 min3", meaning "throw 4d6 and yield the sum of 3
-  lower dice"
 
 # done
 
+- [x] #20: handling operator min with notation "4d6 min3", meaning "throw 4d6 and yield the sum of 3
+  lower dice"
 - [x] #25: test max N with exploding dice
 - [x] #24: refactor roller.rs in a module plus multiple files
 - [x] #19: draft output. Define a result struct to hold roll result.
