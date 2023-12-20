@@ -1,9 +1,10 @@
 use iron_dice::*;
 
 fn main() {
-    let mut r: Roller = String::from("5d6 max3").parse().unwrap();
-    for _ in 1..=6 {
-        let result = r.roll();
-        println!("{result:?}");
-    }
+     let mut r: Roller = String::from("5d6 max3").parse().unwrap();
+     for _ in 1..=6 {
+         let result = r.roll();
+         println!("{result:?}");
+     }
 }
+
