@@ -1,3 +1,3 @@
-mod roller;
+mod dice_roller;
 
-pub use roller::*;
+pub use dice_roller::*;
