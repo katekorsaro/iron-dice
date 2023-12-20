@@ -2,10 +2,10 @@ use rand::rngs::ThreadRng;
 use rand::thread_rng;
 use std::str::FromStr;
 
-mod impl_roller_roll;
-mod impl_roller_roll_one;
-mod parse;
-mod roll;
+mod fn_roller_roll;
+mod fn_roller_roll_one;
+mod ts_parse;
+mod ts_roll;
 
 use super::roll_err::*;
 
