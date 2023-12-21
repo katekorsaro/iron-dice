@@ -48,6 +48,7 @@ fn standard_single_die_with_negative_modifier() {
         assert!(roll_result.outcome > -20 && roll_result.outcome < 1);
     }
 }
+
 #[test]
 fn standard_success_counting() {
     let mut r: super::Roller = String::from("6d6 sc1").parse().unwrap();
@@ -56,6 +57,7 @@ fn standard_success_counting() {
         assert_eq!(roll_result.outcome, 6);
     }
 }
+
 #[test]
 fn standard_exploding() {
     let mut r: super::Roller = String::from("1d6 ex6").parse().unwrap();
@@ -69,6 +71,7 @@ fn standard_exploding() {
         assert!(*roll_result.dice.last().unwrap() < 6);
     }
 }
+
 #[test]
 fn exploding_success_threshold() {
     let mut r: super::Roller = String::from("1d6 ex6 sc6").parse().unwrap();
