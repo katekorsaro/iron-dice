@@ -20,10 +20,10 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] #22: for success counting create a separate field into RollResult to store actual dice results
 
 # done
 
+- [x] #22: for success counting create a separate field into RollResult to store actual dice results
 - [x] #25: refactor code a little better, see test output to improve
 - [x] #24: test min/max x of y with a fewer dice number -> 2d6 max3
 - [x] #20: handling operator min with notation "4d6 min3", meaning "throw 4d6 and yield the sum of 3
