@@ -2,8 +2,11 @@ use rand::rngs::ThreadRng;
 use rand::thread_rng;
 use std::str::FromStr;
 
+// public functions implementation
 mod fn_roller_roll;
 mod fn_roller_roll_one;
+
+// unit tests
 mod ts_parse;
 mod ts_roll;
 
