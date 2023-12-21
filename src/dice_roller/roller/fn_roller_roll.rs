@@ -38,6 +38,18 @@ impl Roller {
             }
         };
 
+        // considering mid
+        sum = match self.take_mid {
+            None => sum,
+            Some(mid) => {
+                results.sort();
+                results.iter()
+                    .skip((results.len() - mid as usize)/2)
+                    .take(mid.try_into().unwrap())
+                    .sum()
+            }
+        };
+
         // considering success counting
         let mut successes: Vec<i32> = Vec::new();
         if let Some(success_threshold) = self.success_threshold {

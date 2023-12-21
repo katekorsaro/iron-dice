@@ -174,3 +174,16 @@ fn max_x_of_y_with_fewer_dice() {
         assert_eq!(max3, roll_result.outcome);
     }
 }
+
+#[test]
+fn mid_x_of_y() {
+    let mut r: super::Roller = String::from("5d6 mid3").parse().unwrap();
+    for _ in 1..=1000 {
+        let roll_result = r.roll();
+        assert_eq!(roll_result.dice.len(), 5);
+        let mut results = roll_result.dice.clone();
+        results.sort();
+        let mid3: i32 = results.iter().skip(1).take(3).sum();
+        assert_eq!(mid3, roll_result.outcome);
+    }
+}
