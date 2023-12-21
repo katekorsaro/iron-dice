@@ -54,7 +54,8 @@ fn standard_success_counting() {
     let mut r: super::Roller = String::from("6d6 sc1").parse().unwrap();
     for _ in 1..=1000 {
         let roll_result = r.roll();
-        roll_result.successes.iter()
+        assert_eq!(roll_result.dice.len(), roll_result.successes.len());
+        roll_result.successes.into_iter()
             .for_each(|x| {assert_eq!(x, 1);});
         assert_eq!(roll_result.outcome, 6);
     }
