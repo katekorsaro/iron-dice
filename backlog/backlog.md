@@ -17,11 +17,11 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] #21: handling operator mid with notation "5d6 mid3", meaning "throw 5d6 and yield the sum of 3
-  middle dice"
 
 # done
 
+- [x] #21: handling operator mid with notation "5d6 mid3", meaning "throw 5d6 and yield the sum of 3
+  middle dice"
 - [x] #19: handling operator max with notation "4d6 max3", meaning "throw 4d6 and yield the sum of 3
   higher dice"
 - [x] #22: for success counting create a separate field into RollResult to store actual dice results
