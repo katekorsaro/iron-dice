@@ -9,7 +9,6 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 # to do
 
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
-- [ ] #22: for success counting create a separate field into RollResult to store actual dice results
 - [ ] #21: handling operator mid with notation "5d6 mid3", meaning "throw 4d6 and yield the sum of 3
   middle dice"
 - [ ] #19: handling operator max with notation "4d6 max3", meaning "throw 4d6 and yield the sum of 3
@@ -21,6 +20,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
+- [ ] #22: for success counting create a separate field into RollResult to store actual dice results
 
 # done
 
