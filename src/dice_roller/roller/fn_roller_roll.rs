@@ -14,13 +14,13 @@ impl Roller {
         }
 
         // standard roll
-        let sum: i32 = match self.modifier {
+        let mut sum: i32 = match self.modifier {
             None => results.clone().into_iter().sum(),
             Some(modifier) => results.clone().into_iter().sum::<i32>() + modifier,
         };
 
         // considering max
-        let sum: i32 = match self.take_max {
+        sum = match self.take_max {
             None => sum,
             Some(max) => {
                 results.sort();
@@ -30,7 +30,7 @@ impl Roller {
         };
 
         // considering min
-        let sum: i32 = match self.take_min {
+        sum = match self.take_min {
             None => sum,
             Some(min) => {
                 results.sort();
@@ -38,6 +38,19 @@ impl Roller {
             }
         };
 
-        RollResult::new(results, sum)
+        // considering success counting
+        let mut successes: Vec<i32> = Vec::new();
+        if let Some(success_threshold) = self.success_threshold {
+            results.iter().for_each(|x| {
+                if *x >= success_threshold.try_into().unwrap() {
+                    successes.push(1);
+                } else {
+                    successes.push(0);
+                }
+            });
+            sum = successes.iter().sum();
+        }
+
+        RollResult::new(results, sum).successes(successes)
     }
 }

@@ -55,8 +55,9 @@ fn standard_success_counting() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), roll_result.successes.len());
-        roll_result.successes.into_iter()
-            .for_each(|x| {assert_eq!(x, 1);});
+        roll_result.successes.into_iter().for_each(|x| {
+            assert_eq!(x, 1);
+        });
         assert_eq!(roll_result.outcome, 6);
     }
 }
@@ -81,11 +82,11 @@ fn exploding_success_threshold() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         roll_result
-            .dice
+            .successes
             .iter()
-            .take(roll_result.dice.len() - 1)
+            .take(roll_result.successes.len() - 1)
             .for_each(|x| assert!(*x == 1));
-        assert!(*roll_result.dice.last().unwrap() == 0);
+        assert!(*roll_result.successes.last().unwrap() == 0);
     }
 }
 

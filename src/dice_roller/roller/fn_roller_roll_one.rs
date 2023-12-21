@@ -7,19 +7,7 @@ impl Roller {
         loop {
             let result = self.rng.gen_range(1..=self.sides).try_into().unwrap();
 
-            // check for success roll:
-            // if no success, then normal result
-            // else 1 for success, 0 otherwise
-            match self.success_threshold {
-                None => results.push(result),
-                Some(threshold) => {
-                    if result >= threshold.try_into().unwrap() {
-                        results.push(1);
-                    } else {
-                        results.push(0);
-                    }
-                }
-            }
+            results.push(result);
 
             // check for exit conditions:
             // if there's now threshold or

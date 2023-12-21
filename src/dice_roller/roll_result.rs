@@ -14,4 +14,9 @@ impl RollResult {
             successes: Vec::new(),
         }
     }
+
+    pub fn successes(mut self, successes: Vec<i32>) -> Self {
+        self.successes = successes;
+        self
+    }
 }
