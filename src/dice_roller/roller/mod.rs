@@ -147,6 +147,21 @@ impl Roller {
 
         take_min_descriptor
     }
+
+    fn parse_take_mid_descriptor(descriptor: &str) -> Option<u32> {
+        // midN handling
+        let take_mid_descriptor = descriptor
+            .split(&[' '])
+            .filter(|x| x.contains("mid"))
+            .take(1)
+            .map(|x| x.replace("mid", ""))
+            .map(|x| x.parse::<u32>().ok())
+            .collect::<Vec<Option<u32>>>()
+            .pop()
+            .flatten();
+
+        take_mid_descriptor
+    }
 }
 
 /// for idiomatic parsing
@@ -187,6 +202,9 @@ impl FromStr for Roller {
         // parsing min N
         let take_min_descriptor = Roller::parse_take_min_descriptor(&descriptor);
 
+        // parsing mid N
+        let take_mid_descriptor = Roller::parse_take_mid_descriptor(&descriptor);
+
         // output
         let descriptor: (u32, i32, Option<i32>) = match tokens.len() {
             2 => (
@@ -207,6 +225,7 @@ impl FromStr for Roller {
             .success_threshold(success_descriptor)
             .explode_threshold(explode_descriptor)
             .take_max(take_max_descriptor)
-            .take_min(take_min_descriptor))
+            .take_min(take_min_descriptor)
+            .take_mid(take_mid_descriptor))
     }
 }
