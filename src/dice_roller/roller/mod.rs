@@ -37,6 +37,9 @@ pub struct Roller {
 
     /// minimum number of dice to consider for outcome
     take_min: Option<u32>,
+
+    /// mid number of dice to consider for outcome
+    take_mid: Option<u32>,
 }
 
 impl Roller {
@@ -50,6 +53,7 @@ impl Roller {
             explode_threshold: None,
             take_max: None,
             take_min: None,
+            take_mid: None,
             rng: thread_rng(),
         }
     }
@@ -76,6 +80,11 @@ impl Roller {
 
     fn take_min(mut self, take_min: Option<u32>) -> Self {
         self.take_min = take_min;
+        self
+    }
+
+    fn take_mid(mut self, take_mid: Option<u32>) -> Self {
+        self.take_mid = take_mid;
         self
     }
 

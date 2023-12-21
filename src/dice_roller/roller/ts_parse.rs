@@ -67,3 +67,11 @@ fn min_x_of_y() {
     assert_eq!(r.sides, 6);
     assert_eq!(r.take_min, Some(3));
 }
+
+#[test]
+fn mid_x_of_y() {
+    let r: super::Roller = String::from("5d6 mid3").parse().unwrap();
+    assert_eq!(r.dice, 5);
+    assert_eq!(r.sides, 6);
+    assert_eq!(r.take_mid, Some(3));
+}
