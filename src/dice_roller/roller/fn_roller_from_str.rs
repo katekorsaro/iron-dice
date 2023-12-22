@@ -56,7 +56,7 @@ impl FromStr for Roller {
             _ => todo!(),
         };
 
-        Ok(Roller::new(descriptor.0, descriptor.1.try_into().unwrap())
+        Ok(Roller::new(descriptor.0, descriptor.1 as u32)
             .modifier(descriptor.2)
             .success_threshold(success_descriptor)
             .explode_threshold(explode_descriptor)

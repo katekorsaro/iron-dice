@@ -25,7 +25,7 @@ impl Roller {
             Some(max) => {
                 results.sort();
                 results.reverse();
-                results.iter().take(max.try_into().unwrap()).sum()
+                results.iter().take(max as usize).sum()
             }
         };
 
@@ -34,7 +34,7 @@ impl Roller {
             None => sum,
             Some(min) => {
                 results.sort();
-                results.iter().take(min.try_into().unwrap()).sum()
+                results.iter().take(min as usize).sum()
             }
         };
 
@@ -45,7 +45,7 @@ impl Roller {
                 results.sort();
                 results.iter()
                     .skip((results.len() - mid as usize)/2)
-                    .take(mid.try_into().unwrap())
+                    .take(mid as usize)
                     .sum()
             }
         };
@@ -54,7 +54,7 @@ impl Roller {
         let mut successes: Vec<i32> = Vec::new();
         if let Some(success_threshold) = self.success_threshold {
             results.iter().for_each(|x| {
-                if *x >= success_threshold.try_into().unwrap() {
+                if *x >= success_threshold as i32 {
                     successes.push(1);
                 } else {
                     successes.push(0);
