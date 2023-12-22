@@ -8,7 +8,6 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
-- [ ] replace try_into with as
 - [ ] make success counting work with max, min and mid
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #18: accept parameters from cli
@@ -18,10 +17,11 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] test success counting and max... it might have some sense
+- [ ] replace try_into with as
 
 # done
 
+- [x] test success counting and max... it might have some sense
 - [x] refactor from_str into a separate module
 - [x] #21: handling operator mid with notation "5d6 mid3", meaning "throw 5d6 and yield the sum of 3
   middle dice"
