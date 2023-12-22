@@ -8,6 +8,8 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
+- [ ] replace try_into with as
+- [ ] make success counting work with max, min and mid
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #18: accept parameters from cli
 - [ ] #17: define differnt types of success while counting successes. 4d10 sc9 sv10:2 fv1:-1 standing
@@ -16,6 +18,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
+- [ ] test success counting and max... it might have some sense
 
 # done
 
