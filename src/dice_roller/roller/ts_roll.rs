@@ -1,12 +1,14 @@
 #[test]
 fn standard() {
     let mut r: super::Roller = String::from("3d6").parse().unwrap();
-    let roll_result = r.roll();
-    assert_eq!(roll_result.dice.len(), 3);
-    for die in roll_result.dice {
-        assert!(die > 0 && die < 7);
+    for _ in 1..=1000 {
+        let roll_result = r.roll();
+        assert_eq!(roll_result.dice.len(), 3);
+        for die in roll_result.dice {
+            assert!(die > 0 && die < 7);
+        }
+        assert!(roll_result.outcome > 0 && roll_result.outcome < 19);
     }
-    assert!(roll_result.outcome > 0 && roll_result.outcome < 19);
 }
 
 #[test]
@@ -55,6 +57,9 @@ fn standard_success_counting() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), roll_result.successes.len());
+        roll_result.dice.into_iter().for_each(|x| {
+            assert_ne!(x, 0);
+        });
         roll_result.successes.into_iter().for_each(|x| {
             assert_eq!(x, 1);
         });
