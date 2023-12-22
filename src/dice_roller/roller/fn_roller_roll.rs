@@ -6,6 +6,7 @@ impl Roller {
     pub fn roll(&mut self) -> RollResult {
         let mut results: Vec<i32> = Vec::new();
 
+        // rolling dice and getting raw results
         for _ in 1..=self.dice {
             let die_results = self.roll_one();
             for result in die_results {
@@ -33,8 +34,8 @@ impl Roller {
         }
 
         // considering the result array to analyze
-        let mut results = match self.success_threshold {
-            None => results,
+        let mut counting_results = match self.success_threshold {
+            None => results.clone(),
             Some(_) => successes.clone(),
         };
 
@@ -42,9 +43,9 @@ impl Roller {
         sum = match self.take_max {
             None => sum,
             Some(max) => {
-                results.sort();
-                results.reverse();
-                results.iter().take(max as usize).sum()
+                counting_results.sort();
+                counting_results.reverse();
+                counting_results.iter().take(max as usize).sum()
             }
         };
 
@@ -52,8 +53,8 @@ impl Roller {
         sum = match self.take_min {
             None => sum,
             Some(min) => {
-                results.sort();
-                results.iter().take(min as usize).sum()
+                counting_results.sort();
+                counting_results.iter().take(min as usize).sum()
             }
         };
 
@@ -61,8 +62,8 @@ impl Roller {
         sum = match self.take_mid {
             None => sum,
             Some(mid) => {
-                results.sort();
-                results.iter()
+                counting_results.sort();
+                counting_results.iter()
                     .skip((results.len() - mid as usize)/2)
                     .take(mid as usize)
                     .sum()

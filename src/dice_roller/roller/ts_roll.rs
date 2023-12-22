@@ -114,8 +114,8 @@ fn max_x_of_y_exploding() {
         results.reverse();
         let max3: i32 = results.iter().take(3).sum();
         assert_eq!(max3, roll_result.outcome);
-        if roll_result.dice.len() == 4 {
-            assert_eq!(roll_result.dice[0], 6);
+        if roll_result.dice.len() == 6 {
+            assert_eq!(results[0], 6);
         }
     }
 }
@@ -143,7 +143,7 @@ fn min_x_of_y_exploding() {
         let min3: i32 = results.iter().take(3).sum();
         assert_eq!(min3, roll_result.outcome);
         if roll_result.dice.len() == 6 {
-            assert_eq!(roll_result.dice[5], 6);
+            assert_eq!(results[5], 6);
         }
     }
 }
@@ -194,6 +194,7 @@ fn success_and_max() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), 5);
+        roll_result.dice.iter().for_each(|x| { assert_ne!(*x, 0);});
         let mut results = roll_result.successes.clone();
         results.sort();
         results.reverse();
@@ -208,6 +209,7 @@ fn success_and_min() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), 5);
+        roll_result.dice.iter().for_each(|x| { assert_ne!(*x, 0);});
         let mut results = roll_result.successes.clone();
         results.sort();
         results.reverse();
@@ -222,6 +224,7 @@ fn success_and_mid() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), 5);
+        roll_result.dice.iter().for_each(|x| { assert_ne!(*x, 0);});
         let mut results = roll_result.successes.clone();
         results.sort();
         results.reverse();
