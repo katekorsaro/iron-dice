@@ -19,6 +19,25 @@ impl Roller {
             Some(modifier) => results.clone().into_iter().sum::<i32>() + modifier,
         };
 
+        // considering success counting
+        let mut successes: Vec<i32> = Vec::new();
+        if let Some(success_threshold) = self.success_threshold {
+            results.iter().for_each(|x| {
+                if *x >= success_threshold as i32 {
+                    successes.push(1);
+                } else {
+                    successes.push(0);
+                }
+            });
+            sum = successes.iter().sum();
+        }
+
+        // considering the result array to analyze
+        let mut results = match self.success_threshold {
+            None => results,
+            Some(_) => successes.clone(),
+        };
+
         // considering max
         sum = match self.take_max {
             None => sum,
@@ -50,18 +69,6 @@ impl Roller {
             }
         };
 
-        // considering success counting
-        let mut successes: Vec<i32> = Vec::new();
-        if let Some(success_threshold) = self.success_threshold {
-            results.iter().for_each(|x| {
-                if *x >= success_threshold as i32 {
-                    successes.push(1);
-                } else {
-                    successes.push(0);
-                }
-            });
-            sum = successes.iter().sum();
-        }
 
         RollResult::new(results, sum).successes(successes)
     }

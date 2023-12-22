@@ -201,3 +201,31 @@ fn success_and_max() {
         assert_eq!(sum, roll_result.outcome);
     }
 }
+
+#[test]
+fn success_and_min() {
+    let mut r: super::Roller = String::from("5d6 min3 sc1").parse().unwrap();
+    for _ in 1..=1000 {
+        let roll_result = r.roll();
+        assert_eq!(roll_result.dice.len(), 5);
+        let mut results = roll_result.successes.clone();
+        results.sort();
+        results.reverse();
+        let sum: i32 = results.iter().take(3).sum();
+        assert_eq!(sum, roll_result.outcome);
+    }
+}
+
+#[test]
+fn success_and_mid() {
+    let mut r: super::Roller = String::from("5d6 mid3 sc1").parse().unwrap();
+    for _ in 1..=1000 {
+        let roll_result = r.roll();
+        assert_eq!(roll_result.dice.len(), 5);
+        let mut results = roll_result.successes.clone();
+        results.sort();
+        results.reverse();
+        let sum: i32 = results.iter().take(3).sum();
+        assert_eq!(sum, roll_result.outcome);
+    }
+}
