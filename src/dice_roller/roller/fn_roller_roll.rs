@@ -70,7 +70,6 @@ impl Roller {
             }
         };
 
-
         RollResult::new(results, sum).successes(successes)
     }
 }
