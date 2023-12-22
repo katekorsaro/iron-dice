@@ -17,10 +17,10 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] replace try_into with as
 
 # done
 
+- [x] replace try_into with as
 - [x] test success counting and max... it might have some sense
 - [x] refactor from_str into a separate module
 - [x] #21: handling operator mid with notation "5d6 mid3", meaning "throw 5d6 and yield the sum of 3
