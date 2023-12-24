@@ -8,6 +8,8 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
+- [ ] check for possible overflow given a definition. The overflow should happen when the number of
+  dice multiplied by the maximum yielded result is over 255.
 - [ ] prepare to upload to crates.io
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #18: accept parameters from cli
