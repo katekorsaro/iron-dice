@@ -8,8 +8,6 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
 
-- [ ] rethink the numbers and impose limits to avoid overflow. Maybe the single die result should be
-  a plain u8
 - [ ] prepare to upload to crates.io
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #18: accept parameters from cli
@@ -19,6 +17,8 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
+- [ ] rethink the numbers and impose limits to avoid overflow. Maybe the single die result should be
+  a plain u8
 
 # done
 
