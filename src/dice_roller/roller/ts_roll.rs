@@ -104,7 +104,7 @@ fn max_x_of_y() {
         let mut results = roll_result.dice.clone();
         results.sort();
         results.reverse();
-        let max3: i32 = results.iter().take(3).sum();
+        let max3: i32 = results.iter().take(3).sum::<u8>() as i32;
         assert_eq!(max3, roll_result.outcome);
     }
 }
@@ -117,7 +117,7 @@ fn max_x_of_y_exploding() {
         let mut results = roll_result.dice.clone();
         results.sort();
         results.reverse();
-        let max3: i32 = results.iter().take(3).sum();
+        let max3: i32 = results.iter().take(3).sum::<u8>() as i32;
         assert_eq!(max3, roll_result.outcome);
         if roll_result.dice.len() == 6 {
             assert_eq!(results[0], 6);
@@ -133,7 +133,7 @@ fn min_x_of_y() {
         assert_eq!(roll_result.dice.len(), 6);
         let mut results = roll_result.dice.clone();
         results.sort();
-        let min3: i32 = results.iter().take(3).sum();
+        let min3: i32 = results.iter().take(3).sum::<u8>() as i32;
         assert_eq!(min3, roll_result.outcome);
     }
 }
@@ -145,7 +145,7 @@ fn min_x_of_y_exploding() {
         let roll_result = r.roll();
         let mut results = roll_result.dice.clone();
         results.sort();
-        let min3: i32 = results.iter().take(3).sum();
+        let min3: i32 = results.iter().take(3).sum::<u8>() as i32;
         assert_eq!(min3, roll_result.outcome);
         if roll_result.dice.len() == 6 {
             assert_eq!(results[5], 6);
@@ -161,7 +161,7 @@ fn min_x_of_y_with_fewer_dice() {
         assert_eq!(roll_result.dice.len(), 2);
         let mut results = roll_result.dice.clone();
         results.sort();
-        let min3: i32 = results.iter().take(3).sum();
+        let min3: i32 = results.iter().take(3).sum::<u8>() as i32;
         assert_eq!(min3, roll_result.outcome);
     }
 }
@@ -175,7 +175,7 @@ fn max_x_of_y_with_fewer_dice() {
         let mut results = roll_result.dice.clone();
         results.sort();
         results.reverse();
-        let max3: i32 = results.iter().take(3).sum();
+        let max3: i32 = results.iter().take(3).sum::<u8>() as i32;
         assert_eq!(max3, roll_result.outcome);
     }
 }
@@ -188,7 +188,7 @@ fn mid_x_of_y() {
         assert_eq!(roll_result.dice.len(), 7);
         let mut results = roll_result.dice.clone();
         results.sort();
-        let mid3: i32 = results.iter().skip(2).take(3).sum();
+        let mid3: i32 = results.iter().skip(2).take(3).sum::<u8>() as i32;
         assert_eq!(mid3, roll_result.outcome);
     }
 }
@@ -240,7 +240,19 @@ fn success_and_mid() {
 
 #[test]
 fn overflow () {
-    let roller_definition = format!("{}d20", i16::MAX);
-    let mut roller: super::Roller = String::from(roller_definition).parse().unwrap();
-    let _ = roller.roll();
+    let mut div: u8 = 0;
+
+    loop {
+        if div == u8::MAX { break; }
+
+        dbg!(div);
+
+        let roller_definition = format!("{}d10", div);
+        let mut roller: super::Roller = String::from(roller_definition).parse().unwrap();
+        let result = roller.roll();
+
+        dbg!(result);
+
+        div += 1;
+    }
 }

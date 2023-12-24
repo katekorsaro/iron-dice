@@ -2,10 +2,10 @@ use super::Roller;
 use rand::Rng;
 
 impl Roller {
-    pub fn roll_one(&mut self) -> Vec<i32> {
-        let mut results: Vec<i32> = Vec::new();
+    pub fn roll_one(&mut self) -> Vec<u8> {
+        let mut results: Vec<u8> = Vec::new();
         loop {
-            let result = self.rng.gen_range(1..=self.sides) as i32;
+            let result = self.rng.gen_range(1..=self.sides) as u8;
 
             results.push(result);
 
@@ -15,7 +15,7 @@ impl Roller {
             match self.explode_threshold {
                 None => break,
                 Some(threshold) => {
-                    if result < threshold as i32 {
+                    if result < threshold as u8 {
                         break;
                     }
                 }

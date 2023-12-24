@@ -4,7 +4,7 @@ use super::Roller;
 impl Roller {
     /// Generates a roll result. The result will hold a Vector of die results as well as the sum
     pub fn roll(&mut self) -> RollResult {
-        let mut results: Vec<i32> = Vec::new();
+        let mut results: Vec<u8> = Vec::new();
 
         // rolling dice and getting raw results
         for _ in 1..=self.dice {
@@ -16,21 +16,21 @@ impl Roller {
 
         // standard roll
         let mut sum: i32 = match self.modifier {
-            None => results.clone().into_iter().sum(),
-            Some(modifier) => results.clone().into_iter().sum::<i32>() + modifier,
+            None => results.clone().into_iter().sum::<u8>() as i32,
+            Some(modifier) => results.clone().into_iter().sum::<u8>() as i32 + modifier,
         };
 
         // considering success counting
-        let mut successes: Vec<i32> = Vec::new();
+        let mut successes: Vec<u8> = Vec::new();
         if let Some(success_threshold) = self.success_threshold {
             results.iter().for_each(|x| {
-                if *x >= success_threshold as i32 {
+                if *x >= success_threshold as u8 {
                     successes.push(1);
                 } else {
                     successes.push(0);
                 }
             });
-            sum = successes.iter().sum();
+            sum = successes.iter().sum::<u8>() as i32;
         }
 
         // considering the result array to analyze
@@ -45,7 +45,7 @@ impl Roller {
             Some(max) => {
                 counting_results.sort();
                 counting_results.reverse();
-                counting_results.iter().take(max as usize).sum()
+                counting_results.iter().take(max as usize).sum::<u8>() as i32
             }
         };
 
@@ -54,7 +54,7 @@ impl Roller {
             None => sum,
             Some(min) => {
                 counting_results.sort();
-                counting_results.iter().take(min as usize).sum()
+                counting_results.iter().take(min as usize).sum::<u8>() as i32
             }
         };
 
@@ -66,9 +66,14 @@ impl Roller {
                 counting_results.iter()
                     .skip((results.len() - mid as usize)/2)
                     .take(mid as usize)
-                    .sum()
+                    .sum::<u8>() as i32
             }
         };
+
+        // temp fix
+        let successes: Vec<i32> = successes.into_iter()
+            .map(|x| x as i32)
+            .collect();
 
         RollResult::new(results, sum).successes(successes)
     }
