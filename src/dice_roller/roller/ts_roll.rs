@@ -237,3 +237,10 @@ fn success_and_mid() {
         assert_eq!(sum, roll_result.outcome);
     }
 }
+
+#[test]
+fn overflow () {
+    let roller_definition = format!("{}d20", i16::MAX);
+    let mut roller: super::Roller = String::from(roller_definition).parse().unwrap();
+    let _ = roller.roll();
+}
