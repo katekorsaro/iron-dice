@@ -19,11 +19,11 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 - [ ] check for possible overflow given a definition. The overflow should happen when the number of
   dice multiplied by the maximum yielded result is over 255.
-- [ ] rethink the numbers and impose limits to avoid overflow. Maybe the single die result should be
-  a plain u8
 
 # done
 
+- [x] rethink the numbers and impose limits to avoid overflow. Maybe the single die result should be
+  a plain u8
 - [x] review automatic test... refactor possible?
 - [x] make success counting work with max, min and mid
 - [x] replace try_into with as
