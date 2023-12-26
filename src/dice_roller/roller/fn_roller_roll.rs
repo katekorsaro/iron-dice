@@ -15,13 +15,13 @@ impl Roller {
         }
 
         // standard roll
-        let mut sum: i32 = match self.modifier {
-            None => results.clone().into_iter().sum::<u8>() as i32,
-            Some(modifier) => results.clone().into_iter().sum::<u8>() as i32 + modifier,
+        let mut sum: i16 = match self.modifier {
+            None => results.clone().into_iter().sum::<u8>() as i16,
+            Some(modifier) => results.clone().into_iter().sum::<u8>() as i16 + modifier as i16,
         };
 
         // considering success counting
-        let mut successes: Vec<u8> = Vec::new();
+        let mut successes: Vec<i8> = Vec::new();
         if let Some(success_threshold) = self.success_threshold {
             results.iter().for_each(|x| {
                 if *x >= success_threshold as u8 {
@@ -30,12 +30,14 @@ impl Roller {
                     successes.push(0);
                 }
             });
-            sum = successes.iter().sum::<u8>() as i32;
+            sum = successes.iter().sum::<i8>() as i16;
         }
 
         // considering the result array to analyze
         let mut counting_results = match self.success_threshold {
-            None => results.clone(),
+            None => results.iter()
+                .map(|x| *x as i8)
+                .collect(),
             Some(_) => successes.clone(),
         };
 
@@ -45,7 +47,7 @@ impl Roller {
             Some(max) => {
                 counting_results.sort();
                 counting_results.reverse();
-                counting_results.iter().take(max as usize).sum::<u8>() as i32
+                counting_results.iter().take(max as usize).sum::<i8>() as i16
             }
         };
 
@@ -54,7 +56,7 @@ impl Roller {
             None => sum,
             Some(min) => {
                 counting_results.sort();
-                counting_results.iter().take(min as usize).sum::<u8>() as i32
+                counting_results.iter().take(min as usize).sum::<i8>() as i16
             }
         };
 
@@ -66,14 +68,9 @@ impl Roller {
                 counting_results.iter()
                     .skip((results.len() - mid as usize)/2)
                     .take(mid as usize)
-                    .sum::<u8>() as i32
+                    .sum::<i8>() as i16
             }
         };
-
-        // temp fix
-        let successes: Vec<i32> = successes.into_iter()
-            .map(|x| x as i32)
-            .collect();
 
         RollResult::new(results, sum).successes(successes)
     }

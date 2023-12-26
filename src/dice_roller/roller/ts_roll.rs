@@ -37,7 +37,7 @@ fn standard_with_negative_modifier() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), 1);
-        assert!(roll_result.outcome > -20 && roll_result.outcome < 1);
+        assert!((roll_result.outcome  as i8) > -20 && (roll_result.outcome as i8) < 1);
     }
 }
 
@@ -47,7 +47,7 @@ fn standard_single_die_with_negative_modifier() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), 1);
-        assert!(roll_result.outcome > -20 && roll_result.outcome < 1);
+        assert!((roll_result.outcome as i8) > -20 && (roll_result.outcome as i8) < 1);
     }
 }
 
@@ -104,7 +104,7 @@ fn max_x_of_y() {
         let mut results = roll_result.dice.clone();
         results.sort();
         results.reverse();
-        let max3: i32 = results.iter().take(3).sum::<u8>() as i32;
+        let max3: i16 = results.iter().take(3).sum::<u8>() as i16;
         assert_eq!(max3, roll_result.outcome);
     }
 }
@@ -117,7 +117,7 @@ fn max_x_of_y_exploding() {
         let mut results = roll_result.dice.clone();
         results.sort();
         results.reverse();
-        let max3: i32 = results.iter().take(3).sum::<u8>() as i32;
+        let max3: i16 = results.iter().take(3).sum::<u8>() as i16;
         assert_eq!(max3, roll_result.outcome);
         if roll_result.dice.len() == 6 {
             assert_eq!(results[0], 6);
@@ -133,7 +133,7 @@ fn min_x_of_y() {
         assert_eq!(roll_result.dice.len(), 6);
         let mut results = roll_result.dice.clone();
         results.sort();
-        let min3: i32 = results.iter().take(3).sum::<u8>() as i32;
+        let min3: i16 = results.iter().take(3).sum::<u8>() as i16;
         assert_eq!(min3, roll_result.outcome);
     }
 }
@@ -145,7 +145,7 @@ fn min_x_of_y_exploding() {
         let roll_result = r.roll();
         let mut results = roll_result.dice.clone();
         results.sort();
-        let min3: i32 = results.iter().take(3).sum::<u8>() as i32;
+        let min3: i16 = results.iter().take(3).sum::<u8>() as i16;
         assert_eq!(min3, roll_result.outcome);
         if roll_result.dice.len() == 6 {
             assert_eq!(results[5], 6);
@@ -161,7 +161,7 @@ fn min_x_of_y_with_fewer_dice() {
         assert_eq!(roll_result.dice.len(), 2);
         let mut results = roll_result.dice.clone();
         results.sort();
-        let min3: i32 = results.iter().take(3).sum::<u8>() as i32;
+        let min3: i16 = results.iter().take(3).sum::<u8>() as i16;
         assert_eq!(min3, roll_result.outcome);
     }
 }
@@ -175,7 +175,7 @@ fn max_x_of_y_with_fewer_dice() {
         let mut results = roll_result.dice.clone();
         results.sort();
         results.reverse();
-        let max3: i32 = results.iter().take(3).sum::<u8>() as i32;
+        let max3: i16 = results.iter().take(3).sum::<u8>() as i16;
         assert_eq!(max3, roll_result.outcome);
     }
 }
@@ -188,7 +188,7 @@ fn mid_x_of_y() {
         assert_eq!(roll_result.dice.len(), 7);
         let mut results = roll_result.dice.clone();
         results.sort();
-        let mid3: i32 = results.iter().skip(2).take(3).sum::<u8>() as i32;
+        let mid3: i16 = results.iter().skip(2).take(3).sum::<u8>() as i16;
         assert_eq!(mid3, roll_result.outcome);
     }
 }
@@ -203,7 +203,7 @@ fn success_and_max() {
         let mut results = roll_result.successes.clone();
         results.sort();
         results.reverse();
-        let sum: i32 = results.iter().take(3).sum();
+        let sum: i16 = results.iter().take(3).sum::<i8>() as i16;
         assert_eq!(sum, roll_result.outcome);
     }
 }
@@ -218,7 +218,7 @@ fn success_and_min() {
         let mut results = roll_result.successes.clone();
         results.sort();
         results.reverse();
-        let sum: i32 = results.iter().take(3).sum();
+        let sum: i16 = results.iter().take(3).sum::<i8>() as i16;
         assert_eq!(sum, roll_result.outcome);
     }
 }
@@ -233,7 +233,7 @@ fn success_and_mid() {
         let mut results = roll_result.successes.clone();
         results.sort();
         results.reverse();
-        let sum: i32 = results.iter().take(3).sum();
+        let sum: i16 = results.iter().take(3).sum::<i8>() as i16;
         assert_eq!(sum, roll_result.outcome);
     }
 }
@@ -250,8 +250,6 @@ fn overflow () {
         let roller_definition = format!("{}d10", div);
         let mut roller: super::Roller = String::from(roller_definition).parse().unwrap();
         let result = roller.roll();
-
-        dbg!(result);
 
         div += 1;
     }

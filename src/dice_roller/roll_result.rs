@@ -2,12 +2,12 @@
 #[derive(Debug)]
 pub struct RollResult {
     pub dice: Vec<u8>,
-    pub successes: Vec<i32>,
-    pub outcome: i32,
+    pub successes: Vec<i8>,
+    pub outcome: i16,
 }
 
 impl RollResult {
-    pub fn new(dice: Vec<u8>, outcome: i32) -> Self {
+    pub fn new(dice: Vec<u8>, outcome: i16) -> Self {
         Self {
             dice,
             outcome,
@@ -15,7 +15,7 @@ impl RollResult {
         }
     }
 
-    pub fn successes(mut self, successes: Vec<i32>) -> Self {
+    pub fn successes(mut self, successes: Vec<i8>) -> Self {
         self.successes = successes;
         self
     }
