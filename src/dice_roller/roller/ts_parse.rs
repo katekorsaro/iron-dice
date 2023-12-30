@@ -75,3 +75,9 @@ fn mid_x_of_y() {
     assert_eq!(r.sides, 6);
     assert_eq!(r.take_mid, Some(3));
 }
+
+#[test]
+fn overflow_check () {
+    let r: Result<super::Roller, super::RollerErr> = String::from("201d10").parse();
+    assert_eq!(r, Err(super::RollerErr::PossibleOverflow));
+}

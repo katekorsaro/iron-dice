@@ -5,6 +5,7 @@ use rand::thread_rng;
 mod fn_roller_roll;
 mod fn_roller_roll_one;
 mod fn_roller_from_str;
+mod impl_roller_partial_eq;
 
 // unit tests
 mod ts_parse;
@@ -12,6 +13,7 @@ mod ts_roll;
 
 use super::roll_err::*;
 
+#[derive(Debug)]
 /// A die roller engine. Given a valid string such as "3d6", "d20", will generate a roll result.
 pub struct Roller {
     /// number of dice to throw

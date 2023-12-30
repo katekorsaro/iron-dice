@@ -56,6 +56,10 @@ impl FromStr for Roller {
             _ => todo!(),
         };
 
+        if descriptor.0 * descriptor.1 as u32 > 2000 {
+            return Err(RollerErr::PossibleOverflow);
+        }
+
         Ok(Roller::new(descriptor.0, descriptor.1 as u32)
             .modifier(descriptor.2)
             .success_threshold(success_descriptor)
