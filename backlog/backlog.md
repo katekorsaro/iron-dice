@@ -17,11 +17,12 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] check for possible overflow given a definition. The overflow should happen when the number of
-  dice multiplied by the maximum yielded result is over 255.
+- [ ] implement partial equality for Roller
 
 # done
 
+- [x] check for possible overflow given a definition. The overflow should happen when the number of
+  dice multiplied by the maximum yielded result is over 255.
 - [x] rethink the numbers and impose limits to avoid overflow. Maybe the single die result should be
   a plain u8
 - [x] review automatic test... refactor possible?
