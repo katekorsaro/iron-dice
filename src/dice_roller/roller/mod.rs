@@ -2,10 +2,10 @@ use rand::rngs::ThreadRng;
 use rand::thread_rng;
 
 // public functions implementation
-mod fn_roller_roll;
-mod fn_roller_roll_one;
-mod impl_roller_from_str;
-mod impl_roller_partial_eq;
+mod fn_roll;
+mod fn_roll_one;
+mod impl_from_str;
+mod impl_partial_eq;
 
 // unit tests
 mod ts_parse;
