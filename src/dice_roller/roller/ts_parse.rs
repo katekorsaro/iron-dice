@@ -81,3 +81,16 @@ fn overflow_check () {
     let r: Result<super::Roller, super::RollerErr> = String::from("201d10").parse();
     assert_eq!(r, Err(super::RollerErr::PossibleOverflow));
 }
+
+#[test]
+fn partial_eq () {
+    let r1: super::Roller = String::from("3d6").parse().unwrap();
+    let r2: super::Roller = String::from("3d6").parse().unwrap();
+
+    assert_eq!(r1, r2);
+
+    let r1: super::Roller = String::from("3d6 max2 ex6 sc6").parse().unwrap();
+    let r2: super::Roller = String::from("3d6 max2 ex6 sc6").parse().unwrap();
+
+    assert_eq!(r1, r2);
+}
