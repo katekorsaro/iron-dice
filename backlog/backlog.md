@@ -17,10 +17,10 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # doing
 
-- [ ] implement partial equality for Roller
 
 # done
 
+- [x] implement partial equality for Roller
 - [x] rename file from fn to impl in case of trait implementation
 - [x] check for possible overflow given a definition. The overflow should happen when the number of
   dice multiplied by the maximum yielded result is over 255.
