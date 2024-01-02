@@ -7,7 +7,6 @@ irondice DICE
 DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
-- [ ] rename roller module avoiding repetitions
 - [ ] find a way to fail equality test when adding a new roller prop
 - [ ] prepare to upload to crates.io
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
@@ -21,6 +20,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # done
 
+- [x] rename roller module avoiding repetitions
 - [x] implement partial equality for Roller
 - [x] rename file from fn to impl in case of trait implementation
 - [x] check for possible overflow given a definition. The overflow should happen when the number of
