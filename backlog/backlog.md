@@ -7,7 +7,6 @@ irondice DICE
 DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
-- [ ] rename file from fn to impl in case of trait implementation
 - [ ] prepare to upload to crates.io
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #18: accept parameters from cli
@@ -21,6 +20,7 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # done
 
+- [x] rename file from fn to impl in case of trait implementation
 - [x] check for possible overflow given a definition. The overflow should happen when the number of
   dice multiplied by the maximum yielded result is over 255.
 - [x] rethink the numbers and impose limits to avoid overflow. Maybe the single die result should be
