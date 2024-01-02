@@ -7,7 +7,7 @@ irondice DICE
 DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
-
+- [ ] rename file from fn to impl in case of trait implementation
 - [ ] prepare to upload to crates.io
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #18: accept parameters from cli
