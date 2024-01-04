@@ -11,12 +11,12 @@ DICE: dice descriptor such as 3d6, 1d20, d10, d100
 - [ ] prepare to upload to crates.io
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
 - [ ] #18: accept parameters from cli
-
-# doing
-
 - [ ] #17: define differnt types of success while counting successes. 4d10 sc9 sv10:2 fv1:-1
   standing for: throw 4d10 count success on a 9 or more. On a 10 add 1 more success, on a 1 subtract
   1 success
+
+# doing
+
 
 # done
 
