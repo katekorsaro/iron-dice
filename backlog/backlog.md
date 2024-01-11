@@ -7,6 +7,7 @@ irondice DICE
 DICE: dice descriptor such as 3d6, 1d20, d10, d100
 
 # to do
+
 - [ ] find a way to fail equality test when adding a new roller prop
 - [ ] prepare to upload to crates.io
 - [ ] #23: hardening. find combinations that don't make sense, such as max and success counting
