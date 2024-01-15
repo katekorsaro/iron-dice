@@ -184,7 +184,7 @@ impl Roller {
     fn parse_success_values (descriptor: &str) -> Option<Vec<(u32, i32)>> {
         let mut success_values: Vec<(u32, i32)> = Vec::new();
 
-        let success_value_descriptor = descriptor
+        descriptor
             .split(&[' '])
             .filter(|x| x.contains("sv"))
             .map(|x| {
@@ -193,7 +193,7 @@ impl Roller {
             })
             .for_each(|x| {success_values.insert(0, x);});
 
-        if success_values.len() == 0 {
+        if success_values.is_empty() {
             return None;
         }
 

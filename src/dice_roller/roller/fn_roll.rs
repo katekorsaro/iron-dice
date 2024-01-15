@@ -28,7 +28,7 @@ impl Roller {
                     // TODO this is very ugly! Refactor needed
                     let value = self.success_values.get(&(*x as u32));
                     let value = match value { // TODO this is also ugly
-                        None  => 1 as i8,
+                        None  => 1_i8,
                         Some(value) => *value as i8,
                     };
                     successes.push(value);
