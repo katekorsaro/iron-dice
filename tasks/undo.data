@@ -1,0 +1,30 @@
+time 1705300766
+new [description:"restart project iron-dice" entry:"1705055124" modified:"1705298915" project:"iron-dice" status:"pending" tags:"personal" tags_personal:"x" uuid:"f63d97ad-c868-45e4-9fab-92622d6fdbc3"]
+---
+time 1705300766
+new [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705298924" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+---
+time 1705300766
+new [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705298924" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+---
+time 1705300766
+new [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705298923" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
+---
+time 1705300766
+new [description:"accept parameters from CLI" entry:"1705057406" modified:"1705298916" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705300766
+new [description:"implement output for CLI" entry:"1705057431" modified:"1705298916" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705300766
+new [description:"define different value for successes" entry:"1705057458" modified:"1705298917" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
+---
+time 1705300766
+new [description:"test" end:"1705069119" entry:"1705069117" modified:"1705069119" project:"iron-dice.backlog" status:"deleted" tags:"personal" tags_personal:"x" uuid:"3c90fa62-cd0b-4975-94d3-552d2150a8bd"]
+---
+time 1705300766
+new [description:"test" end:"1705069068" entry:"1705069054" modified:"1705069068" project:"iron-dice.backlog" status:"deleted" uuid:"520f0ee1-979c-42bc-bbe2-22c0849f16a9"]
+---
+time 1705300766
+new [description:"test" end:"1705062929" entry:"1705062810" modified:"1705062929" project:"iron-dice.backlog" status:"deleted" tags:"personal" tags_personal:"x" uuid:"83843289-3a46-43cc-83c5-74df6c3ce981"]
+---

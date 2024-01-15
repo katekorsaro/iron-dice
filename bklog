@@ -1,0 +1,2 @@
+export TASKDATA=./tasks
+taskwarrior-tui -r my-default
