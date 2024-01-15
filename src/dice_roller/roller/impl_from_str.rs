@@ -41,6 +41,9 @@ impl FromStr for Roller {
         // parsing mid N
         let take_mid_descriptor = Roller::parse_take_mid_descriptor(&descriptor);
 
+        // parsing success values
+        let success_values_descriptor = Roller::parse_success_values(&descriptor);
+
         // output
         let descriptor: (u32, i32, Option<i32>) = match tokens.len() {
             2 => (
@@ -66,7 +69,8 @@ impl FromStr for Roller {
             .explode_threshold(explode_descriptor)
             .take_max(take_max_descriptor)
             .take_min(take_min_descriptor)
-            .take_mid(take_mid_descriptor))
+            .take_mid(take_mid_descriptor)
+            .add_success_values(success_values_descriptor))
     }
 }
 

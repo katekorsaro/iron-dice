@@ -52,3 +52,11 @@ time 1705301642
 old [description:"implement output for CLI" entry:"1705057431" modified:"1705298916" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
 new [description:"implement output for CLI" entry:"1705057431" modified:"1705301642" priority:"M" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
 ---
+time 1705319024
+old [description:"define different value for successes" entry:"1705057458" modified:"1705301637" priority:"M" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
+new [description:"define different value for successes" entry:"1705057458" modified:"1705319024" priority:"M" project:"iron-dice.backlog" start:"1705319024" status:"pending" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
+---
+time 1705328224
+old [description:"define different value for successes" entry:"1705057458" modified:"1705319024" priority:"M" project:"iron-dice.backlog" start:"1705319024" status:"pending" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
+new [annotation_1705328224:"parse implementation is done. next steps: roll test and implementation" description:"define different value for successes" entry:"1705057458" modified:"1705328224" priority:"M" project:"iron-dice.backlog" start:"1705319024" status:"pending" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
+---

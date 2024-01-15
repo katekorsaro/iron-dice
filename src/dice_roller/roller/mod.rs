@@ -1,5 +1,6 @@
 use rand::rngs::ThreadRng;
 use rand::thread_rng;
+use std::collections::HashMap;
 
 // public functions implementation
 mod fn_roll;
@@ -42,6 +43,9 @@ pub struct Roller {
 
     /// mid number of dice to consider for outcome
     take_mid: Option<u32>,
+
+    /// hash with success values
+    success_values: HashMap<u32, i32>,
 }
 
 impl Roller {
@@ -57,6 +61,7 @@ impl Roller {
             take_min: None,
             take_mid: None,
             rng: thread_rng(),
+            success_values: HashMap::new(),
         }
     }
 
@@ -87,6 +92,17 @@ impl Roller {
 
     fn take_mid(mut self, take_mid: Option<u32>) -> Self {
         self.take_mid = take_mid;
+        self
+    }
+
+    fn add_success_values (mut self, values: Option<Vec<(u32, i32)>>) -> Self {
+        if let Some(values) = values {
+            values.iter()
+                .for_each(|x| {self.success_values.insert(x.0, x.1);});
+        } else {
+            self.success_values.clear();
+        }
+
         self
     }
 
@@ -163,6 +179,25 @@ impl Roller {
             .flatten();
 
         take_mid_descriptor
+    }
+
+    fn parse_success_values (descriptor: &str) -> Option<Vec<(u32, i32)>> {
+        let mut success_values: Vec<(u32, i32)> = Vec::new();
+
+        let success_value_descriptor = descriptor
+            .split(&[' '])
+            .filter(|x| x.contains("sv"))
+            .map(|x| {
+                let tokens: Vec<_> = x.split(&[':']).collect();
+                (tokens[1].parse::<u32>().unwrap(), tokens[2].parse::<i32>().unwrap())
+            })
+            .for_each(|x| {success_values.insert(0, x);});
+
+        if success_values.len() == 0 {
+            return None;
+        }
+
+        Some(success_values)
     }
 }
 

@@ -237,3 +237,10 @@ fn success_and_mid() {
         assert_eq!(sum, roll_result.outcome);
     }
 }
+
+#[test]
+fn success_values () {
+    let mut r: super::Roller = String::from("d6 sc1 sv:1:2 sv:2:2 sv:3:2 sv:4:2 sv:5:2 sv:6:2 ").parse().unwrap();
+    let roll_result = r.roll();
+    assert_eq!(roll_result.outcome, 2);
+}

@@ -94,3 +94,19 @@ fn partial_eq () {
 
     assert_eq!(r1, r2);
 }
+
+#[test]
+fn success_values () {
+    let r: super::Roller = String::from("3d6 sc5 sv:6:2").parse().unwrap();
+    let value = r.success_values.get(&6);
+    assert_eq!(value, Option::Some(&2));
+}
+
+#[test]
+fn multi_success_values () {
+    let r: super::Roller = String::from("3d6 sc5 sv:6:2 sv:5:1").parse().unwrap();
+    let value = r.success_values.get(&5);
+    assert_eq!(value, Option::Some(&1));
+    let value = r.success_values.get(&6);
+    assert_eq!(value, Option::Some(&2));
+}

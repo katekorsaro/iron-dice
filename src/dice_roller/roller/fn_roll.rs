@@ -25,7 +25,13 @@ impl Roller {
         if let Some(success_threshold) = self.success_threshold {
             results.iter().for_each(|x| {
                 if *x >= success_threshold as u8 {
-                    successes.push(1);
+                    // TODO this is very ugly! Refactor needed
+                    let value = self.success_values.get(&(*x as u32));
+                    let value = match value { // TODO this is also ugly
+                        None  => 1 as i8,
+                        Some(value) => *value as i8,
+                    };
+                    successes.push(value);
                 } else {
                     successes.push(0);
                 }
