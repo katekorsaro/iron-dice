@@ -1,3 +1,4 @@
+[annotation_1705328224:"parse implementation is done. next steps: roll test and implementation" description:"define different value for successes" end:"1705330887" entry:"1705057458" modified:"1705330887" priority:"M" project:"iron-dice.backlog" status:"completed" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
 [description:"restart project iron-dice" end:"1705301604" entry:"1705055124" modified:"1705301604" project:"iron-dice" status:"deleted" tags:"personal" tags_personal:"x" uuid:"f63d97ad-c868-45e4-9fab-92622d6fdbc3"]
 [description:"test" end:"1705069119" entry:"1705069117" modified:"1705069119" project:"iron-dice.backlog" status:"deleted" tags:"personal" tags_personal:"x" uuid:"3c90fa62-cd0b-4975-94d3-552d2150a8bd"]
 [description:"test" end:"1705069068" entry:"1705069054" modified:"1705069068" project:"iron-dice.backlog" status:"deleted" uuid:"520f0ee1-979c-42bc-bbe2-22c0849f16a9"]

@@ -60,3 +60,17 @@ time 1705328224
 old [description:"define different value for successes" entry:"1705057458" modified:"1705319024" priority:"M" project:"iron-dice.backlog" start:"1705319024" status:"pending" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
 new [annotation_1705328224:"parse implementation is done. next steps: roll test and implementation" description:"define different value for successes" entry:"1705057458" modified:"1705328224" priority:"M" project:"iron-dice.backlog" start:"1705319024" status:"pending" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
 ---
+time 1705330887
+old [annotation_1705328224:"parse implementation is done. next steps: roll test and implementation" description:"define different value for successes" entry:"1705057458" modified:"1705328224" priority:"M" project:"iron-dice.backlog" start:"1705319024" status:"pending" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
+new [annotation_1705328224:"parse implementation is done. next steps: roll test and implementation" description:"define different value for successes" end:"1705330887" entry:"1705057458" modified:"1705330887" priority:"M" project:"iron-dice.backlog" status:"completed" tags:"personal" tags_personal:"x" uuid:"fb42b467-cd28-43e1-90a5-95abf0e5d27e"]
+---
+time 1705330924
+new [description:"define custom values for failure" entry:"1705330924" modified:"1705330924" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+---
+time 1705330931
+old [description:"define custom values for failure" entry:"1705330924" modified:"1705330924" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+new [description:"define custom values for failure" entry:"1705330924" modified:"1705330931" priority:"M" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+---
+time 1705330979
+new [description:"refactor ugly integer casts" entry:"1705330979" modified:"1705330979" priority:"H" project:"iron-dice.backlog" status:"pending" uuid:"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"]
+---
