@@ -37,7 +37,7 @@ fn standard_with_negative_modifier() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), 1);
-        assert!((roll_result.outcome  as i8) > -20 && (roll_result.outcome as i8) < 1);
+        assert!((roll_result.outcome as i8) > -20 && (roll_result.outcome as i8) < 1);
     }
 }
 
@@ -199,7 +199,9 @@ fn success_and_max() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), 5);
-        roll_result.dice.iter().for_each(|x| { assert_ne!(*x, 0);});
+        roll_result.dice.iter().for_each(|x| {
+            assert_ne!(*x, 0);
+        });
         let mut results = roll_result.successes.clone();
         results.sort();
         results.reverse();
@@ -214,7 +216,9 @@ fn success_and_min() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), 5);
-        roll_result.dice.iter().for_each(|x| { assert_ne!(*x, 0);});
+        roll_result.dice.iter().for_each(|x| {
+            assert_ne!(*x, 0);
+        });
         let mut results = roll_result.successes.clone();
         results.sort();
         results.reverse();
@@ -229,7 +233,9 @@ fn success_and_mid() {
     for _ in 1..=1000 {
         let roll_result = r.roll();
         assert_eq!(roll_result.dice.len(), 5);
-        roll_result.dice.iter().for_each(|x| { assert_ne!(*x, 0);});
+        roll_result.dice.iter().for_each(|x| {
+            assert_ne!(*x, 0);
+        });
         let mut results = roll_result.successes.clone();
         results.sort();
         results.reverse();
@@ -239,8 +245,10 @@ fn success_and_mid() {
 }
 
 #[test]
-fn success_values () {
-    let mut r: super::Roller = String::from("d6 sc1 sv:1:2 sv:2:2 sv:3:2 sv:4:2 sv:5:2 sv:6:2 ").parse().unwrap();
+fn success_values() {
+    let mut r: super::Roller = String::from("d6 sc1 sv:1:2 sv:2:2 sv:3:2 sv:4:2 sv:5:2 sv:6:2 ")
+        .parse()
+        .unwrap();
     let roll_result = r.roll();
     assert_eq!(roll_result.outcome, 2);
 }

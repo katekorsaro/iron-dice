@@ -45,7 +45,7 @@ pub struct Roller {
     take_mid: Option<u32>,
 
     /// hash with success values
-    success_values: HashMap<u32, i32>,
+    success_values: HashMap<u8, i8>,
 }
 
 impl Roller {
@@ -95,10 +95,11 @@ impl Roller {
         self
     }
 
-    fn add_success_values (mut self, values: Option<Vec<(u32, i32)>>) -> Self {
+    fn add_success_values(mut self, values: Option<Vec<(u8, i8)>>) -> Self {
         if let Some(values) = values {
-            values.iter()
-                .for_each(|x| {self.success_values.insert(x.0, x.1);});
+            values.iter().for_each(|x| {
+                self.success_values.insert(x.0, x.1);
+            });
         } else {
             self.success_values.clear();
         }
@@ -181,17 +182,22 @@ impl Roller {
         take_mid_descriptor
     }
 
-    fn parse_success_values (descriptor: &str) -> Option<Vec<(u32, i32)>> {
-        let mut success_values: Vec<(u32, i32)> = Vec::new();
+    fn parse_success_values(descriptor: &str) -> Option<Vec<(u8, i8)>> {
+        let mut success_values: Vec<(u8, i8)> = Vec::new();
 
         descriptor
             .split(&[' '])
             .filter(|x| x.contains("sv"))
             .map(|x| {
                 let tokens: Vec<_> = x.split(&[':']).collect();
-                (tokens[1].parse::<u32>().unwrap(), tokens[2].parse::<i32>().unwrap())
+                (
+                    tokens[1].parse::<u8>().unwrap(),
+                    tokens[2].parse::<i8>().unwrap(),
+                )
             })
-            .for_each(|x| {success_values.insert(0, x);});
+            .for_each(|x| {
+                success_values.insert(0, x);
+            });
 
         if success_values.is_empty() {
             return None;
@@ -200,4 +206,3 @@ impl Roller {
         Some(success_values)
     }
 }
-

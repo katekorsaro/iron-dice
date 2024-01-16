@@ -25,11 +25,10 @@ impl Roller {
         if let Some(success_threshold) = self.success_threshold {
             results.iter().for_each(|x| {
                 if *x >= success_threshold as u8 {
-                    // TODO this is very ugly! Refactor needed
-                    let value = self.success_values.get(&(*x as u32));
-                    let value = match value { // TODO this is also ugly
-                        None  => 1_i8,
-                        Some(value) => *value as i8,
+                    let value = self.success_values.get(x);
+                    let value = match value {
+                        None => 1_i8,
+                        Some(value) => *value,
                     };
                     successes.push(value);
                 } else {
@@ -41,9 +40,7 @@ impl Roller {
 
         // considering the result array to analyze
         let mut counting_results = match self.success_threshold {
-            None => results.iter()
-                .map(|x| *x as i8)
-                .collect(),
+            None => results.iter().map(|x| *x as i8).collect(),
             Some(_) => successes.clone(),
         };
 
@@ -71,8 +68,9 @@ impl Roller {
             None => sum,
             Some(mid) => {
                 counting_results.sort();
-                counting_results.iter()
-                    .skip((results.len() - mid as usize)/2)
+                counting_results
+                    .iter()
+                    .skip((results.len() - mid as usize) / 2)
                     .take(mid as usize)
                     .sum::<i8>() as i16
             }

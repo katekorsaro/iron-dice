@@ -1,5 +1,5 @@
+use super::{Roller, RollerErr};
 use std::str::FromStr;
-use super::{Roller,RollerErr};
 /// for idiomatic parsing
 impl FromStr for Roller {
     type Err = RollerErr;
@@ -73,4 +73,3 @@ impl FromStr for Roller {
             .add_success_values(success_values_descriptor))
     }
 }
-

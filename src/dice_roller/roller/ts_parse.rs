@@ -77,13 +77,13 @@ fn mid_x_of_y() {
 }
 
 #[test]
-fn overflow_check () {
+fn overflow_check() {
     let r: Result<super::Roller, super::RollerErr> = String::from("201d10").parse();
     assert_eq!(r, Err(super::RollerErr::PossibleOverflow));
 }
 
 #[test]
-fn partial_eq () {
+fn partial_eq() {
     let r1: super::Roller = String::from("3d6").parse().unwrap();
     let r2: super::Roller = String::from("3d6").parse().unwrap();
 
@@ -96,14 +96,14 @@ fn partial_eq () {
 }
 
 #[test]
-fn success_values () {
+fn success_values() {
     let r: super::Roller = String::from("3d6 sc5 sv:6:2").parse().unwrap();
     let value = r.success_values.get(&6);
     assert_eq!(value, Option::Some(&2));
 }
 
 #[test]
-fn multi_success_values () {
+fn multi_success_values() {
     let r: super::Roller = String::from("3d6 sc5 sv:6:2 sv:5:1").parse().unwrap();
     let value = r.success_values.get(&5);
     assert_eq!(value, Option::Some(&1));
