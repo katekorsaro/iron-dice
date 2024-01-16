@@ -45,3 +45,4 @@
 {"description":"define custom values for failure","entry":"20240115T150204Z","modified":"20240116T141905Z","priority":"M","start":"20240116T141905Z","status":"pending","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["feat","next"]}
 {"description":"define custom values for failure","end":"20240116T144840Z","entry":"20240115T150204Z","modified":"20240116T144840Z","priority":"M","status":"completed","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["feat","next"]}
 {"description":"write some documentation","entry":"20240116T144944Z","modified":"20240116T144944Z","status":"pending","uuid":"c4419735-f3a0-4729-8854-1cbde3cc57f4","tags":["feat"]}
+{"description":"accept parameters from CLI","entry":"20240112T110326Z","modified":"20240116T145923Z","priority":"M","status":"pending","uuid":"86d51d12-9c0d-4c19-9460-8241048068a4","tags":["feat","next"]}

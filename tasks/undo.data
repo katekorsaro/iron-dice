@@ -173,3 +173,7 @@ new [description:"define custom values for failure" end:"1705416520" entry:"1705
 time 1705416584
 new [description:"write some documentation" entry:"1705416584" modified:"1705416584" status:"pending" tags:"feat" tags_feat:"x" uuid:"c4419735-f3a0-4729-8854-1cbde3cc57f4"]
 ---
+time 1705417163
+old [description:"accept parameters from CLI" entry:"1705057406" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [description:"accept parameters from CLI" entry:"1705057406" modified:"1705417163" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
