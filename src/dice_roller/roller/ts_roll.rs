@@ -252,3 +252,12 @@ fn success_values() {
     let roll_result = r.roll();
     assert_eq!(roll_result.outcome, 2);
 }
+
+#[test]
+fn failure_values() {
+    let mut r: super::Roller = String::from("d6 sc7 fv:1:-2 fv:2:-2 fv:3:-2 fv:4:-2 fv:5:-2 fv:6:-2 ")
+        .parse()
+        .unwrap();
+    let roll_result = r.roll();
+    assert_eq!(roll_result.outcome, -2);
+}

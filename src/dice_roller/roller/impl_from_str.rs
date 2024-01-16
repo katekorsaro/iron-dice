@@ -44,6 +44,9 @@ impl FromStr for Roller {
         // parsing success values
         let success_values_descriptor = Roller::parse_success_values(&descriptor);
 
+        // parsing failure values
+        let failure_values_descriptor = Roller::parse_failure_values(&descriptor);
+
         // output
         let descriptor: (u32, i32, Option<i32>) = match tokens.len() {
             2 => (
@@ -70,6 +73,7 @@ impl FromStr for Roller {
             .take_max(take_max_descriptor)
             .take_min(take_min_descriptor)
             .take_mid(take_mid_descriptor)
-            .add_success_values(success_values_descriptor))
+            .add_success_values(success_values_descriptor)
+            .add_failure_values(failure_values_descriptor))
     }
 }

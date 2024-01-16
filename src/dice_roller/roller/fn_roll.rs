@@ -32,7 +32,12 @@ impl Roller {
                     };
                     successes.push(value);
                 } else {
-                    successes.push(0);
+                    let value = self.failure_values.get(x);
+                    let value = match value {
+                        None => 0_i8,
+                        Some(value) => *value,
+                    };
+                    successes.push(value);
                 }
             });
             sum = successes.iter().sum::<i8>() as i16;

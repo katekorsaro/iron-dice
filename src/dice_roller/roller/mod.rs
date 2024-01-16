@@ -46,6 +46,9 @@ pub struct Roller {
 
     /// hash with success values
     success_values: HashMap<u8, i8>,
+
+    /// hash with failure values
+    failure_values: HashMap<u8, i8>,
 }
 
 impl Roller {
@@ -62,6 +65,7 @@ impl Roller {
             take_mid: None,
             rng: thread_rng(),
             success_values: HashMap::new(),
+            failure_values: HashMap::new(),
         }
     }
 
@@ -102,6 +106,18 @@ impl Roller {
             });
         } else {
             self.success_values.clear();
+        }
+
+        self
+    }
+
+    fn add_failure_values(mut self, values: Option<Vec<(u8, i8)>>) -> Self {
+        if let Some(values) = values {
+            values.iter().for_each(|x| {
+                self.failure_values.insert(x.0, x.1);
+            });
+        } else {
+            self.failure_values.clear();
         }
 
         self
@@ -204,5 +220,29 @@ impl Roller {
         }
 
         Some(success_values)
+    }
+
+    fn parse_failure_values(descriptor: &str) -> Option<Vec<(u8, i8)>> {
+        let mut failure_values: Vec<(u8, i8)> = Vec::new();
+
+        descriptor
+            .split(&[' '])
+            .filter(|x| x.contains("fv"))
+            .map(|x| {
+                let tokens: Vec<_> = x.split(&[':']).collect();
+                (
+                    tokens[1].parse::<u8>().unwrap(),
+                    tokens[2].parse::<i8>().unwrap(),
+                )
+            })
+            .for_each(|x| {
+                failure_values.insert(0, x);
+            });
+
+        if failure_values.is_empty() {
+            return None;
+        }
+
+        Some(failure_values)
     }
 }

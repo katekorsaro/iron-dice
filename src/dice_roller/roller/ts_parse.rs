@@ -100,6 +100,7 @@ fn success_values() {
     let r: super::Roller = String::from("3d6 sc5 sv:6:2").parse().unwrap();
     let value = r.success_values.get(&6);
     assert_eq!(value, Option::Some(&2));
+    assert_eq!(r.failure_values.len(), 0);
 }
 
 #[test]
@@ -109,4 +110,23 @@ fn multi_success_values() {
     assert_eq!(value, Option::Some(&1));
     let value = r.success_values.get(&6);
     assert_eq!(value, Option::Some(&2));
+    assert_eq!(r.failure_values.len(), 0);
+}
+
+#[test]
+fn failure_values() {
+    let r: super::Roller = String::from("3d6 sc5 fv:1:-1").parse().unwrap();
+    let value = r.failure_values.get(&1);
+    assert_eq!(value, Option::Some(&-1));
+    assert_eq!(r.success_values.len(), 0);
+}
+
+#[test]
+fn multi_failure_values() {
+    let r: super::Roller = String::from("3d6 sc5 fv:1:-2 fv:2:-1").parse().unwrap();
+    let value = r.failure_values.get(&1);
+    assert_eq!(value, Option::Some(&-2));
+    let value = r.failure_values.get(&2);
+    assert_eq!(value, Option::Some(&-1));
+    assert_eq!(r.success_values.len(), 0);
 }
