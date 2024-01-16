@@ -74,3 +74,91 @@ new [description:"define custom values for failure" entry:"1705330924" modified:
 time 1705330979
 new [description:"refactor ugly integer casts" entry:"1705330979" modified:"1705330979" priority:"H" project:"iron-dice.backlog" status:"pending" uuid:"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"]
 ---
+time 1705411758
+old [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705298924" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+new [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705411758" status:"pending" tags:"personal" tags_personal:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+---
+time 1705411758
+old [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705298924" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+new [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705411758" status:"pending" tags:"personal" tags_personal:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+---
+time 1705411758
+old [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705298923" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
+new [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705411758" status:"pending" tags:"personal" tags_personal:"x" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
+---
+time 1705411758
+old [description:"accept parameters from CLI" entry:"1705057406" modified:"1705301641" priority:"M" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [description:"accept parameters from CLI" entry:"1705057406" modified:"1705411758" priority:"M" status:"pending" tags:"personal" tags_personal:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705411758
+old [description:"implement output for CLI" entry:"1705057431" modified:"1705301642" priority:"M" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [description:"implement output for CLI" entry:"1705057431" modified:"1705411758" priority:"M" status:"pending" tags:"personal" tags_personal:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705411758
+old [description:"define custom values for failure" entry:"1705330924" modified:"1705330931" priority:"M" project:"iron-dice.backlog" status:"pending" tags:"personal" tags_personal:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+new [description:"define custom values for failure" entry:"1705330924" modified:"1705411758" priority:"M" status:"pending" tags:"personal" tags_personal:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+---
+time 1705411758
+old [description:"refactor ugly integer casts" entry:"1705330979" modified:"1705330979" priority:"H" project:"iron-dice.backlog" status:"pending" uuid:"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"]
+new [description:"refactor ugly integer casts" entry:"1705330979" modified:"1705411758" priority:"H" status:"pending" uuid:"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"]
+---
+time 1705411766
+old [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705411758" status:"pending" tags:"personal" tags_personal:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+new [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705411766" status:"pending" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+---
+time 1705411766
+old [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705411758" status:"pending" tags:"personal" tags_personal:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+new [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705411766" status:"pending" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+---
+time 1705411766
+old [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705411758" status:"pending" tags:"personal" tags_personal:"x" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
+new [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705411766" status:"pending" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
+---
+time 1705411766
+old [description:"accept parameters from CLI" entry:"1705057406" modified:"1705411758" priority:"M" status:"pending" tags:"personal" tags_personal:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [description:"accept parameters from CLI" entry:"1705057406" modified:"1705411766" priority:"M" status:"pending" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705411766
+old [description:"implement output for CLI" entry:"1705057431" modified:"1705411758" priority:"M" status:"pending" tags:"personal" tags_personal:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [description:"implement output for CLI" entry:"1705057431" modified:"1705411766" priority:"M" status:"pending" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705411766
+old [description:"define custom values for failure" entry:"1705330924" modified:"1705411758" priority:"M" status:"pending" tags:"personal" tags_personal:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+new [description:"define custom values for failure" entry:"1705330924" modified:"1705411766" priority:"M" status:"pending" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+---
+time 1705411781
+old [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705411766" status:"pending" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+new [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705411781" status:"pending" tags:"feat" tags_feat:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+---
+time 1705411781
+old [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705411766" status:"pending" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+new [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705411781" status:"pending" tags:"feat" tags_feat:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+---
+time 1705411781
+old [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705411766" status:"pending" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
+new [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705411781" status:"pending" tags:"feat" tags_feat:"x" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
+---
+time 1705411781
+old [description:"accept parameters from CLI" entry:"1705057406" modified:"1705411766" priority:"M" status:"pending" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [description:"accept parameters from CLI" entry:"1705057406" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705411781
+old [description:"implement output for CLI" entry:"1705057431" modified:"1705411766" priority:"M" status:"pending" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [description:"implement output for CLI" entry:"1705057431" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705411781
+old [description:"define custom values for failure" entry:"1705330924" modified:"1705411766" priority:"M" status:"pending" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+new [description:"define custom values for failure" entry:"1705330924" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+---
+time 1705411781
+old [description:"refactor ugly integer casts" entry:"1705330979" modified:"1705411758" priority:"H" status:"pending" uuid:"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"]
+new [description:"refactor ugly integer casts" entry:"1705330979" modified:"1705411781" priority:"H" status:"pending" tags:"feat" tags_feat:"x" uuid:"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"]
+---
+time 1705413956
+old [description:"refactor ugly integer casts" entry:"1705330979" modified:"1705411781" priority:"H" status:"pending" tags:"feat" tags_feat:"x" uuid:"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"]
+new [description:"refactor ugly integer casts" end:"1705413956" entry:"1705330979" modified:"1705413956" priority:"H" status:"completed" tags:"feat" tags_feat:"x" uuid:"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"]
+---
+time 1705414024
+old [description:"define custom values for failure" entry:"1705330924" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+new [description:"define custom values for failure" entry:"1705330924" modified:"1705414024" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+---

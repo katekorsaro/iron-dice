@@ -20,3 +20,25 @@
 {"description":"define custom values for failure","entry":"20240115T150204Z","modified":"20240115T150204Z","project":"iron-dice.backlog","status":"pending","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["personal"]}
 {"description":"define custom values for failure","entry":"20240115T150204Z","modified":"20240115T150211Z","priority":"M","project":"iron-dice.backlog","status":"pending","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["personal"]}
 {"description":"refactor ugly integer casts","entry":"20240115T150259Z","modified":"20240115T150259Z","priority":"H","project":"iron-dice.backlog","status":"pending","uuid":"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"}
+{"description":"find a way to raise an error during equality test when adding a new prop in roller","entry":"20240112T105335Z","modified":"20240116T132918Z","status":"pending","uuid":"a4bde460-0996-4124-9e33-cf7805cb0409","tags":["personal"]}
+{"description":"prepare to upload to crates.io","entry":"20240112T105815Z","modified":"20240116T132918Z","status":"pending","uuid":"61e1e1e4-d58e-4614-b850-e0cc189ae9bf","tags":["personal"]}
+{"description":"hardening. prevent absurd combinations","entry":"20240112T110020Z","modified":"20240116T132918Z","status":"pending","uuid":"6fd22945-d0de-4a58-bbc7-db31797606ff","tags":["personal"]}
+{"description":"accept parameters from CLI","entry":"20240112T110326Z","modified":"20240116T132918Z","priority":"M","status":"pending","uuid":"86d51d12-9c0d-4c19-9460-8241048068a4","tags":["personal"]}
+{"description":"implement output for CLI","entry":"20240112T110351Z","modified":"20240116T132918Z","priority":"M","status":"pending","uuid":"106ba09d-6418-4555-a0a6-ffb07ba718f1","tags":["personal"]}
+{"description":"define custom values for failure","entry":"20240115T150204Z","modified":"20240116T132918Z","priority":"M","status":"pending","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["personal"]}
+{"description":"refactor ugly integer casts","entry":"20240115T150259Z","modified":"20240116T132918Z","priority":"H","status":"pending","uuid":"9c66c4a7-4b47-4914-9f1d-c33cced4dab8"}
+{"description":"find a way to raise an error during equality test when adding a new prop in roller","entry":"20240112T105335Z","modified":"20240116T132926Z","status":"pending","uuid":"a4bde460-0996-4124-9e33-cf7805cb0409"}
+{"description":"prepare to upload to crates.io","entry":"20240112T105815Z","modified":"20240116T132926Z","status":"pending","uuid":"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"}
+{"description":"hardening. prevent absurd combinations","entry":"20240112T110020Z","modified":"20240116T132926Z","status":"pending","uuid":"6fd22945-d0de-4a58-bbc7-db31797606ff"}
+{"description":"accept parameters from CLI","entry":"20240112T110326Z","modified":"20240116T132926Z","priority":"M","status":"pending","uuid":"86d51d12-9c0d-4c19-9460-8241048068a4"}
+{"description":"implement output for CLI","entry":"20240112T110351Z","modified":"20240116T132926Z","priority":"M","status":"pending","uuid":"106ba09d-6418-4555-a0a6-ffb07ba718f1"}
+{"description":"define custom values for failure","entry":"20240115T150204Z","modified":"20240116T132926Z","priority":"M","status":"pending","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53"}
+{"description":"find a way to raise an error during equality test when adding a new prop in roller","entry":"20240112T105335Z","modified":"20240116T132941Z","status":"pending","uuid":"a4bde460-0996-4124-9e33-cf7805cb0409","tags":["feat"]}
+{"description":"prepare to upload to crates.io","entry":"20240112T105815Z","modified":"20240116T132941Z","status":"pending","uuid":"61e1e1e4-d58e-4614-b850-e0cc189ae9bf","tags":["feat"]}
+{"description":"hardening. prevent absurd combinations","entry":"20240112T110020Z","modified":"20240116T132941Z","status":"pending","uuid":"6fd22945-d0de-4a58-bbc7-db31797606ff","tags":["feat"]}
+{"description":"accept parameters from CLI","entry":"20240112T110326Z","modified":"20240116T132941Z","priority":"M","status":"pending","uuid":"86d51d12-9c0d-4c19-9460-8241048068a4","tags":["feat"]}
+{"description":"implement output for CLI","entry":"20240112T110351Z","modified":"20240116T132941Z","priority":"M","status":"pending","uuid":"106ba09d-6418-4555-a0a6-ffb07ba718f1","tags":["feat"]}
+{"description":"define custom values for failure","entry":"20240115T150204Z","modified":"20240116T132941Z","priority":"M","status":"pending","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["feat"]}
+{"description":"refactor ugly integer casts","entry":"20240115T150259Z","modified":"20240116T132941Z","priority":"H","status":"pending","uuid":"9c66c4a7-4b47-4914-9f1d-c33cced4dab8","tags":["feat"]}
+{"description":"refactor ugly integer casts","end":"20240116T140556Z","entry":"20240115T150259Z","modified":"20240116T140556Z","priority":"H","status":"completed","uuid":"9c66c4a7-4b47-4914-9f1d-c33cced4dab8","tags":["feat"]}
+{"description":"define custom values for failure","entry":"20240115T150204Z","modified":"20240116T140704Z","priority":"M","status":"pending","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["feat","next"]}
