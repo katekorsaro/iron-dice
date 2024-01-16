@@ -170,3 +170,6 @@ time 1705416520
 old [description:"define custom values for failure" entry:"1705330924" modified:"1705414745" priority:"M" start:"1705414745" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
 new [description:"define custom values for failure" end:"1705416520" entry:"1705330924" modified:"1705416520" priority:"M" status:"completed" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
 ---
+time 1705416584
+new [description:"write some documentation" entry:"1705416584" modified:"1705416584" status:"pending" tags:"feat" tags_feat:"x" uuid:"c4419735-f3a0-4729-8854-1cbde3cc57f4"]
+---
