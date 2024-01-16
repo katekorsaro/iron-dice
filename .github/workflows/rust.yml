@@ -1,6 +1,8 @@
 name: Rust
 
 on:
+  workflow_dispatch:
+on:
   push:
     branches: [ "next" ]
   pull_request:
