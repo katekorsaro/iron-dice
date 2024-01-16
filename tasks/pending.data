@@ -3,4 +3,3 @@
 [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705411781" status:"pending" tags:"feat" tags_feat:"x" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
 [description:"accept parameters from CLI" entry:"1705057406" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
 [description:"implement output for CLI" entry:"1705057431" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
-[description:"define custom values for failure" entry:"1705330924" modified:"1705414024" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]

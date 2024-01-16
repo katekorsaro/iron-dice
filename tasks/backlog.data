@@ -42,3 +42,5 @@
 {"description":"refactor ugly integer casts","entry":"20240115T150259Z","modified":"20240116T132941Z","priority":"H","status":"pending","uuid":"9c66c4a7-4b47-4914-9f1d-c33cced4dab8","tags":["feat"]}
 {"description":"refactor ugly integer casts","end":"20240116T140556Z","entry":"20240115T150259Z","modified":"20240116T140556Z","priority":"H","status":"completed","uuid":"9c66c4a7-4b47-4914-9f1d-c33cced4dab8","tags":["feat"]}
 {"description":"define custom values for failure","entry":"20240115T150204Z","modified":"20240116T140704Z","priority":"M","status":"pending","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["feat","next"]}
+{"description":"define custom values for failure","entry":"20240115T150204Z","modified":"20240116T141905Z","priority":"M","start":"20240116T141905Z","status":"pending","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["feat","next"]}
+{"description":"define custom values for failure","end":"20240116T144840Z","entry":"20240115T150204Z","modified":"20240116T144840Z","priority":"M","status":"completed","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["feat","next"]}

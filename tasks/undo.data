@@ -162,3 +162,11 @@ time 1705414024
 old [description:"define custom values for failure" entry:"1705330924" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
 new [description:"define custom values for failure" entry:"1705330924" modified:"1705414024" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
 ---
+time 1705414745
+old [description:"define custom values for failure" entry:"1705330924" modified:"1705414024" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+new [description:"define custom values for failure" entry:"1705330924" modified:"1705414745" priority:"M" start:"1705414745" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+---
+time 1705416520
+old [description:"define custom values for failure" entry:"1705330924" modified:"1705414745" priority:"M" start:"1705414745" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+new [description:"define custom values for failure" end:"1705416520" entry:"1705330924" modified:"1705416520" priority:"M" status:"completed" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"98c31891-9113-45df-9f93-9aa8a44b3e53"]
+---
