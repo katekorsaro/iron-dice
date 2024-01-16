@@ -46,3 +46,7 @@
 {"description":"define custom values for failure","end":"20240116T144840Z","entry":"20240115T150204Z","modified":"20240116T144840Z","priority":"M","status":"completed","uuid":"98c31891-9113-45df-9f93-9aa8a44b3e53","tags":["feat","next"]}
 {"description":"write some documentation","entry":"20240116T144944Z","modified":"20240116T144944Z","status":"pending","uuid":"c4419735-f3a0-4729-8854-1cbde3cc57f4","tags":["feat"]}
 {"description":"accept parameters from CLI","entry":"20240112T110326Z","modified":"20240116T145923Z","priority":"M","status":"pending","uuid":"86d51d12-9c0d-4c19-9460-8241048068a4","tags":["feat","next"]}
+{"description":"accept parameters from CLI","entry":"20240112T110326Z","modified":"20240116T150124Z","status":"pending","uuid":"86d51d12-9c0d-4c19-9460-8241048068a4","tags":["feat","next"]}
+{"description":"implement output for CLI","entry":"20240112T110351Z","modified":"20240116T150125Z","status":"pending","uuid":"106ba09d-6418-4555-a0a6-ffb07ba718f1","tags":["feat"]}
+{"description":"implement output for CLI","entry":"20240112T110351Z","modified":"20240116T132941Z","priority":"M","status":"pending","uuid":"106ba09d-6418-4555-a0a6-ffb07ba718f1","tags":["feat"]}
+{"description":"accept parameters from CLI","entry":"20240112T110326Z","modified":"20240116T145923Z","priority":"M","status":"pending","uuid":"86d51d12-9c0d-4c19-9460-8241048068a4","tags":["feat","next"]}
