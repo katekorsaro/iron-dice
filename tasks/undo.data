@@ -303,3 +303,15 @@ time 1705501927
 old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" annotation_1705486002:"i'll add also dice rolls... just to see what's happening" description:"implement simple output for CLI" entry:"1705057431" modified:"1705486002" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
 new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" annotation_1705486002:"i'll add also dice rolls... just to see what's happening" description:"implement simple output for CLI" end:"1705501927" entry:"1705057431" modified:"1705501927" priority:"M" status:"completed" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
 ---
+time 1705503328
+old [description:"write some documentation" entry:"1705416584" modified:"1705501924" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"c4419735-f3a0-4729-8854-1cbde3cc57f4"]
+new [description:"write some documentation" end:"1705503328" entry:"1705416584" modified:"1705503328" status:"completed" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"c4419735-f3a0-4729-8854-1cbde3cc57f4"]
+---
+time 1705503335
+old [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705411781" status:"pending" tags:"feat" tags_feat:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+new [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705503335" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+---
+time 1705503337
+old [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705503335" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+new [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705503337" start:"1705503337" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+---
