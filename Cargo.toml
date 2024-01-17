@@ -2,6 +2,7 @@
 name = "iron_dice"
 version = "0.1.0"
 edition = "2021"
+description = "a command line utility to throw dice"
 repository = "https://github.com/katekorsaro/iron-dice"
 license = "MIT"
 keywords = ["rpg","dice","random"]
