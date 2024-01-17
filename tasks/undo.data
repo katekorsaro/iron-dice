@@ -177,3 +177,19 @@ time 1705417163
 old [description:"accept parameters from CLI" entry:"1705057406" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
 new [description:"accept parameters from CLI" entry:"1705057406" modified:"1705417163" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
 ---
+time 1705473505
+old [description:"implement output for CLI" entry:"1705057431" modified:"1705411781" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [description:"implement simple output for CLI" entry:"1705057431" modified:"1705473505" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705473529
+old [description:"implement simple output for CLI" entry:"1705057431" modified:"1705473505" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705473529" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705473536
+old [description:"accept parameters from CLI" entry:"1705057406" modified:"1705417163" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [description:"accept parameters from CLI" entry:"1705057406" modified:"1705473536" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705473539
+old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705473529" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705473539" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
