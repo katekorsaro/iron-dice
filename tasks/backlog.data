@@ -85,3 +85,4 @@
 {"description":"write some documentation","end":"20240117T145528Z","entry":"20240116T144944Z","modified":"20240117T145528Z","status":"completed","uuid":"c4419735-f3a0-4729-8854-1cbde3cc57f4","tags":["feat","next"]}
 {"description":"prepare to upload to crates.io","entry":"20240112T105815Z","modified":"20240117T145535Z","status":"pending","uuid":"61e1e1e4-d58e-4614-b850-e0cc189ae9bf","tags":["feat","next"]}
 {"description":"prepare to upload to crates.io","entry":"20240112T105815Z","modified":"20240117T145537Z","start":"20240117T145537Z","status":"pending","uuid":"61e1e1e4-d58e-4614-b850-e0cc189ae9bf","tags":["feat","next"]}
+{"description":"prepare to upload to crates.io","end":"20240117T152639Z","entry":"20240112T105815Z","modified":"20240117T152639Z","status":"completed","uuid":"61e1e1e4-d58e-4614-b850-e0cc189ae9bf","tags":["feat","next"]}

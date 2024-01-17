@@ -315,3 +315,7 @@ time 1705503337
 old [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705503335" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
 new [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705503337" start:"1705503337" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
 ---
+time 1705505199
+old [description:"prepare to upload to crates.io" entry:"1705057095" modified:"1705503337" start:"1705503337" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+new [description:"prepare to upload to crates.io" end:"1705505199" entry:"1705057095" modified:"1705505199" status:"completed" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
+---
