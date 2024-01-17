@@ -16,5 +16,5 @@ fn main() {
     let mut r:Roller = String::from(args).parse().unwrap();
     let result = r.roll();
 
-    println!("{}", result.outcome);
+    println!("{:?} {}", result.dice, result.outcome);
 }
