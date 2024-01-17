@@ -2,10 +2,30 @@ use clap::Parser;
 use iron_dice::Roller;
 
 #[derive(Parser)]
-#[command()]
+#[command(about = "Throws some dice on the standard output")]
 struct Args {
     #[arg(long, short)]
     /// the definition of dice to throw. "3d6" "4d6 max3" "5d10 sc9"
+    ///
+    /// ** Possible definitions **
+    ///
+    /// - NdM where N is the number of dice to throw, default = 1. M is the number of sides per die.
+    ///
+    /// - NdM+C where N is the number of dice to throw, default = 1. M is the number of sides per die. C is added to the die results sum. Can be negative as well
+    ///
+    /// - minN takes the N smallest die results
+    ///
+    /// - maxN takes the N largest die results
+    ///
+    /// - midN takes the middle N die results (make sure you throw an odd number of dice)
+    ///
+    /// - exN explodes every die that shows N or more
+    ///
+    /// - scN count a success for every die that shows N or more
+    ///
+    ///   - sv:N:V used with sc, for every die that shows exactly N the success value is V. Can be spefied multiple times.
+    ///
+    ///   - fv:N:V used with sc, for every die that shows exactly N the failure value is V. Can be spefied multiple times.
     definition: Option<String>,
 }
 fn main() {
