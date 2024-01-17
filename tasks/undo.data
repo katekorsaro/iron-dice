@@ -232,3 +232,54 @@ time 1705483646
 old [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705483633" priority:"M" start:"1705481620" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
 new [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705483646" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
 ---
+time 1705485537
+new [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485537" status:"pending" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+---
+time 1705485548
+old [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485537" status:"pending" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+new [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485548" status:"pending" tags:"feat" tags_feat:"x" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+---
+time 1705485557
+old [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485548" status:"pending" tags:"feat" tags_feat:"x" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+new [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485557" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+---
+time 1705485570
+old [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705483646" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705485570" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705485570
+old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705481617" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705485570" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705485579
+old [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705485570" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705485579" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705485920
+old [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485557" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+new [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485920" status:"pending" tags:"feat" tags_feat:"x" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+---
+time 1705485925
+old [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485920" status:"pending" tags:"feat" tags_feat:"x" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+new [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485925" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+---
+time 1705485943
+old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705485570" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705485943" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705485945
+old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705485943" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705485945" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705485949
+old [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705485579" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705485949" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705485963
+old [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705485949" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" dep_72a04797-6072-4e1d-a6f6-004db39ad698:"x" depends:"72a04797-6072-4e1d-a6f6-004db39ad698" description:"accept parameters from CLI" entry:"1705057406" modified:"1705485963" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705486002
+old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705485945" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" annotation_1705486002:"i'll add also dice rolls... just to see what's happening" description:"implement simple output for CLI" entry:"1705057431" modified:"1705486002" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
