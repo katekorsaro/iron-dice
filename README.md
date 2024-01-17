@@ -2,4 +2,13 @@
 
 # iron-dice
 
-CLI die roller
+A CLI die roller for every RPG enthusiast.
+
+## Usage
+
+- `iron_dice` will yield the result of 3d6
+- `iron_dice "d20"` will throw and yield 1d20
+- `iron_dice "d100+40"` will throw and yield 1d100 and will add 40 to the result
+- `iron_dice "5d6 sc6"` will throw 5d6 and for every 6 will count 1 success
+- `iron_dice "4d6 max3"` will throw 4d6 keeping the largest 3
+- `iron_dice "3d8 ex7"` will throw 3d8 and explode every die showing 7 or more
