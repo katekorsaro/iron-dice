@@ -283,3 +283,23 @@ time 1705486002
 old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705485945" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
 new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" annotation_1705486002:"i'll add also dice rolls... just to see what's happening" description:"implement simple output for CLI" entry:"1705057431" modified:"1705486002" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
 ---
+time 1705500881
+old [description:"investigate clap to handle input parameters, and also help output" entry:"1705485537" modified:"1705485925" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+new [description:"investigate clap to handle input parameters, and also help output" end:"1705500881" entry:"1705485537" modified:"1705500881" priority:"M" status:"completed" tags:"feat" tags_feat:"x" uuid:"72a04797-6072-4e1d-a6f6-004db39ad698"]
+---
+time 1705500883
+old [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" dep_72a04797-6072-4e1d-a6f6-004db39ad698:"x" depends:"72a04797-6072-4e1d-a6f6-004db39ad698" description:"accept parameters from CLI" entry:"1705057406" modified:"1705485963" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" dep_72a04797-6072-4e1d-a6f6-004db39ad698:"x" depends:"72a04797-6072-4e1d-a6f6-004db39ad698" description:"accept parameters from CLI" entry:"1705057406" modified:"1705500883" priority:"M" start:"1705500883" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705501920
+old [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" dep_72a04797-6072-4e1d-a6f6-004db39ad698:"x" depends:"72a04797-6072-4e1d-a6f6-004db39ad698" description:"accept parameters from CLI" entry:"1705057406" modified:"1705500883" priority:"M" start:"1705500883" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" dep_72a04797-6072-4e1d-a6f6-004db39ad698:"x" depends:"72a04797-6072-4e1d-a6f6-004db39ad698" description:"accept parameters from CLI" end:"1705501920" entry:"1705057406" modified:"1705501920" priority:"M" status:"completed" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705501924
+old [description:"write some documentation" entry:"1705416584" modified:"1705416584" status:"pending" tags:"feat" tags_feat:"x" uuid:"c4419735-f3a0-4729-8854-1cbde3cc57f4"]
+new [description:"write some documentation" entry:"1705416584" modified:"1705501924" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"c4419735-f3a0-4729-8854-1cbde3cc57f4"]
+---
+time 1705501927
+old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" annotation_1705486002:"i'll add also dice rolls... just to see what's happening" description:"implement simple output for CLI" entry:"1705057431" modified:"1705486002" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" annotation_1705486002:"i'll add also dice rolls... just to see what's happening" description:"implement simple output for CLI" end:"1705501927" entry:"1705057431" modified:"1705501927" priority:"M" status:"completed" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
