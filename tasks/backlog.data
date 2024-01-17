@@ -86,3 +86,9 @@
 {"description":"prepare to upload to crates.io","entry":"20240112T105815Z","modified":"20240117T145535Z","status":"pending","uuid":"61e1e1e4-d58e-4614-b850-e0cc189ae9bf","tags":["feat","next"]}
 {"description":"prepare to upload to crates.io","entry":"20240112T105815Z","modified":"20240117T145537Z","start":"20240117T145537Z","status":"pending","uuid":"61e1e1e4-d58e-4614-b850-e0cc189ae9bf","tags":["feat","next"]}
 {"description":"prepare to upload to crates.io","end":"20240117T152639Z","entry":"20240112T105815Z","modified":"20240117T152639Z","status":"completed","uuid":"61e1e1e4-d58e-4614-b850-e0cc189ae9bf","tags":["feat","next"]}
+{"description":"allow multiple throws with the same definition","entry":"20240117T153357Z","modified":"20240117T153357Z","status":"pending","uuid":"7afd5ef7-70a1-4929-80f5-64d36cebcf1d","tags":["feat"]}
+{"description":"allow multiple definitions","entry":"20240117T153405Z","modified":"20240117T153405Z","status":"pending","uuid":"ee7b707e-bf8e-4aa5-86f9-c039ff273d53"}
+{"description":"allow multiple definitions","entry":"20240117T153405Z","modified":"20240117T153409Z","status":"pending","uuid":"ee7b707e-bf8e-4aa5-86f9-c039ff273d53","tags":["feat"]}
+{"description":"outptu some statistical data with a large number (configurable) of throws","entry":"20240117T153509Z","modified":"20240117T153509Z","status":"pending","uuid":"84c51e5d-8276-4fd5-a389-54ad16b62402"}
+{"description":"outptu some statistical data with a large number (configurable) of throws","entry":"20240117T153509Z","modified":"20240117T153516Z","status":"pending","uuid":"84c51e5d-8276-4fd5-a389-54ad16b62402","tags":["feat"]}
+{"description":"output some statistical data with a large number (configurable) of throws","entry":"20240117T153509Z","modified":"20240117T153532Z","status":"pending","uuid":"84c51e5d-8276-4fd5-a389-54ad16b62402","tags":["feat"]}
