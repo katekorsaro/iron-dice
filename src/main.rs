@@ -1,20 +1,23 @@
-use std::env;
+use clap::Parser;
 use iron_dice::Roller;
 
+#[derive(Parser)]
+#[command()]
+struct Args {
+    #[arg(long, short)]
+    /// the definition of dice to throw. "3d6" "4d6 max3" "5d10 sc9"
+    definition: Option<String>,
+}
 fn main() {
-    let args = env::args();
-    let args = args
-        .skip(1)
-        .reduce(|mut acc:String, e| {
-            acc.push_str(" ");
-            acc.push_str(&e);
-            acc
-        })
-        .unwrap();
-    let args = args.trim();
+    let args = Args::parse();
 
-    let mut r:Roller = String::from(args).parse().unwrap();
+    let definition = match args.definition {
+        Some(definition) => definition,
+        None => String::from("3d6"),
+    };
+
+    let mut r: Roller = definition.parse().unwrap();
     let result = r.roll();
 
-    println!("{:?} {}", result.dice, result.outcome);
+    println!("{:?} => {}", result.dice, result.outcome);
 }
