@@ -1,9 +1,20 @@
+use std::env;
 use iron_dice::Roller;
 
 fn main() {
-    let mut r: Roller = String::from("6d6 sc4 sv:6:2 fv:1:-1").parse().unwrap();
-    for _ in 1..=20 {
-        let result = r.roll();
-        println!("{result:?}");
-    }
+    let args = env::args();
+    let args = args
+        .skip(1)
+        .reduce(|mut acc:String, e| {
+            acc.push_str(" ");
+            acc.push_str(&e);
+            acc
+        })
+        .unwrap();
+    let args = args.trim();
+
+    let mut r:Roller = String::from(args).parse().unwrap();
+    let result = r.roll();
+
+    println!("{}", result.outcome);
 }
