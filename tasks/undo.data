@@ -193,3 +193,42 @@ time 1705473539
 old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705473529" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
 new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705473539" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
 ---
+time 1705473839
+new [description:"integrate clap as cli args parser" entry:"1705473839" modified:"1705473839" status:"pending" uuid:"3b3bc7ae-6329-4b8f-a14e-3b06a79da909"]
+---
+time 1705473848
+old [description:"integrate clap as cli args parser" entry:"1705473839" modified:"1705473839" status:"pending" uuid:"3b3bc7ae-6329-4b8f-a14e-3b06a79da909"]
+new [description:"integrate clap as cli args parser" end:"1705473848" entry:"1705473839" modified:"1705473848" status:"deleted" uuid:"3b3bc7ae-6329-4b8f-a14e-3b06a79da909"]
+---
+time 1705473863
+old [description:"accept parameters from CLI" entry:"1705057406" modified:"1705473536" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" description:"accept parameters from CLI" entry:"1705057406" modified:"1705473863" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705473874
+old [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705411781" status:"pending" tags:"feat" tags_feat:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+new [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705473874" priority:"L" status:"pending" tags:"feat" tags_feat:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+---
+time 1705473876
+old [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705473874" priority:"L" status:"pending" tags:"feat" tags_feat:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+new [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705473876" status:"pending" tags:"feat" tags_feat:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
+---
+time 1705481613
+old [annotation_1705473863:"use CLAP as command line parser" description:"accept parameters from CLI" entry:"1705057406" modified:"1705473863" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" description:"accept parameters from CLI" entry:"1705057406" modified:"1705481613" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705481617
+old [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705473539" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+new [annotation_1705473529:"simple ouput is just the outcome, no other wording is required" description:"implement simple output for CLI" entry:"1705057431" modified:"1705481617" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"106ba09d-6418-4555-a0a6-ffb07ba718f1"]
+---
+time 1705481620
+old [annotation_1705473863:"use CLAP as command line parser" description:"accept parameters from CLI" entry:"1705057406" modified:"1705481613" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" description:"accept parameters from CLI" entry:"1705057406" modified:"1705481620" priority:"M" start:"1705481620" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705483633
+old [annotation_1705473863:"use CLAP as command line parser" description:"accept parameters from CLI" entry:"1705057406" modified:"1705481620" priority:"M" start:"1705481620" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705483633" priority:"M" start:"1705481620" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
+time 1705483646
+old [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705483633" priority:"M" start:"1705481620" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+new [annotation_1705473863:"use CLAP as command line parser" annotation_1705483633:"for now i accept the exact roller definition... to be improved" description:"accept parameters from CLI" entry:"1705057406" modified:"1705483646" priority:"M" status:"pending" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"86d51d12-9c0d-4c19-9460-8241048068a4"]
+---
