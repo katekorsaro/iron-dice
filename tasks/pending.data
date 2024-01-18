@@ -1,5 +1,5 @@
 [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705473876" status:"pending" tags:"feat" tags_feat:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
 [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705411781" status:"pending" tags:"feat" tags_feat:"x" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
-[description:"allow multiple throws with the same definition" entry:"1705505637" modified:"1705505637" status:"pending" tags:"feat" tags_feat:"x" uuid:"7afd5ef7-70a1-4929-80f5-64d36cebcf1d"]
+[description:"allow multiple throws with the same definition" entry:"1705505637" modified:"1705562454" start:"1705562454" status:"pending" tags:"feat" tags_feat:"x" uuid:"7afd5ef7-70a1-4929-80f5-64d36cebcf1d"]
 [description:"allow multiple definitions" entry:"1705505645" modified:"1705505649" status:"pending" tags:"feat" tags_feat:"x" uuid:"ee7b707e-bf8e-4aa5-86f9-c039ff273d53"]
 [description:"output some statistical data with a large number (configurable) of throws" entry:"1705505709" modified:"1705505732" status:"pending" tags:"feat" tags_feat:"x" uuid:"84c51e5d-8276-4fd5-a389-54ad16b62402"]

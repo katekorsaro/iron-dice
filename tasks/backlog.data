@@ -92,3 +92,4 @@
 {"description":"outptu some statistical data with a large number (configurable) of throws","entry":"20240117T153509Z","modified":"20240117T153509Z","status":"pending","uuid":"84c51e5d-8276-4fd5-a389-54ad16b62402"}
 {"description":"outptu some statistical data with a large number (configurable) of throws","entry":"20240117T153509Z","modified":"20240117T153516Z","status":"pending","uuid":"84c51e5d-8276-4fd5-a389-54ad16b62402","tags":["feat"]}
 {"description":"output some statistical data with a large number (configurable) of throws","entry":"20240117T153509Z","modified":"20240117T153532Z","status":"pending","uuid":"84c51e5d-8276-4fd5-a389-54ad16b62402","tags":["feat"]}
+{"description":"allow multiple throws with the same definition","entry":"20240117T153357Z","modified":"20240118T072054Z","start":"20240118T072054Z","status":"pending","uuid":"7afd5ef7-70a1-4929-80f5-64d36cebcf1d","tags":["feat"]}
