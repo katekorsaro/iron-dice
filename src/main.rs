@@ -27,6 +27,10 @@ struct Args {
     ///
     ///   - fv:N:V used with sc, for every die that shows exactly N the failure value is V. Can be spefied multiple times.
     definition: Option<String>,
+
+    #[arg(long,short)]
+    /// the number of simoultaneous throws, default = 1
+    throw_number: Option<u8>,
 }
 fn main() {
     let args = Args::parse();
@@ -36,8 +40,15 @@ fn main() {
         None => String::from("3d6"),
     };
 
-    let mut r: Roller = definition.parse().unwrap();
-    let result = r.roll();
+    let throw_number = match args.throw_number {
+        Some(throw_number) => throw_number,
+        None => 1_u8,
+    };
 
-    println!("{:?} => {}", result.dice, result.outcome);
+    let mut r: Roller = definition.parse().unwrap();
+
+    for _ in 1..=throw_number {
+        let result = r.roll();
+        println!("{:?} => {}", result.dice, result.outcome);
+    }
 }
