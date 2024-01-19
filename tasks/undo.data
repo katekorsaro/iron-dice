@@ -361,3 +361,22 @@ time 1705652204
 old [description:"experiment a way to use docker to create executable package" entry:"1705652198" modified:"1705652198" status:"pending" tags:"feat" tags_feat:"x" uuid:"db0caad8-b58b-4ed9-b2b2-b932236a326a"]
 new [description:"experiment a way to use docker to create executable package" entry:"1705652198" modified:"1705652204" start:"1705652204" status:"pending" tags:"feat" tags_feat:"x" uuid:"db0caad8-b58b-4ed9-b2b2-b932236a326a"]
 ---
+time 1705654126
+old [description:"experiment a way to use docker to create executable package" entry:"1705652198" modified:"1705652204" start:"1705652204" status:"pending" tags:"feat" tags_feat:"x" uuid:"db0caad8-b58b-4ed9-b2b2-b932236a326a"]
+new [description:"experiment a way to use docker to create executable package" entry:"1705652198" modified:"1705654126" status:"pending" tags:"feat" tags_feat:"x" uuid:"db0caad8-b58b-4ed9-b2b2-b932236a326a"]
+---
+time 1705655014
+old [description:"build a deb package" entry:"1705652167" modified:"1705652167" status:"pending" tags:"feat" tags_feat:"x" uuid:"272a1416-7739-433a-9c65-083ddba17868"]
+new [description:"build a deb package" end:"1705655014" entry:"1705652167" modified:"1705655014" status:"completed" tags:"feat" tags_feat:"x" uuid:"272a1416-7739-433a-9c65-083ddba17868"]
+---
+time 1705656091
+old [description:"build a rpm package" entry:"1705652179" modified:"1705652179" status:"pending" tags:"feat" tags_feat:"x" uuid:"0f7d805b-9eb9-43e4-a210-f12698f304f8"]
+new [description:"build a rpm package" end:"1705656091" entry:"1705652179" modified:"1705656091" status:"completed" tags:"feat" tags_feat:"x" uuid:"0f7d805b-9eb9-43e4-a210-f12698f304f8"]
+---
+time 1705656514
+new [description:"refine build script in order to collect artifacts" entry:"1705656514" modified:"1705656514" status:"pending" uuid:"ce7725f8-88bb-458c-a21e-74ae61fd6fd5"]
+---
+time 1705656519
+old [description:"refine build script in order to collect artifacts" entry:"1705656514" modified:"1705656514" status:"pending" uuid:"ce7725f8-88bb-458c-a21e-74ae61fd6fd5"]
+new [description:"refine build script in order to collect artifacts" entry:"1705656514" modified:"1705656519" status:"pending" tags:"feat" tags_feat:"x" uuid:"ce7725f8-88bb-458c-a21e-74ae61fd6fd5"]
+---

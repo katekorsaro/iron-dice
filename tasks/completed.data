@@ -1,3 +1,5 @@
+[description:"build a rpm package" end:"1705656091" entry:"1705652179" modified:"1705656091" status:"completed" tags:"feat" tags_feat:"x" uuid:"0f7d805b-9eb9-43e4-a210-f12698f304f8"]
+[description:"build a deb package" end:"1705655014" entry:"1705652167" modified:"1705655014" status:"completed" tags:"feat" tags_feat:"x" uuid:"272a1416-7739-433a-9c65-083ddba17868"]
 [description:"allow multiple throws with the same definition" end:"1705564215" entry:"1705505637" modified:"1705564215" status:"completed" tags:"feat" tags_feat:"x" uuid:"7afd5ef7-70a1-4929-80f5-64d36cebcf1d"]
 [description:"prepare to upload to crates.io" end:"1705505199" entry:"1705057095" modified:"1705505199" status:"completed" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"61e1e1e4-d58e-4614-b850-e0cc189ae9bf"]
 [description:"write some documentation" end:"1705503328" entry:"1705416584" modified:"1705503328" status:"completed" tags:"feat,next" tags_feat:"x" tags_next:"x" uuid:"c4419735-f3a0-4729-8854-1cbde3cc57f4"]
