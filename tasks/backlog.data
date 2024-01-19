@@ -94,3 +94,7 @@
 {"description":"output some statistical data with a large number (configurable) of throws","entry":"20240117T153509Z","modified":"20240117T153532Z","status":"pending","uuid":"84c51e5d-8276-4fd5-a389-54ad16b62402","tags":["feat"]}
 {"description":"allow multiple throws with the same definition","entry":"20240117T153357Z","modified":"20240118T072054Z","start":"20240118T072054Z","status":"pending","uuid":"7afd5ef7-70a1-4929-80f5-64d36cebcf1d","tags":["feat"]}
 {"description":"allow multiple throws with the same definition","end":"20240118T075015Z","entry":"20240117T153357Z","modified":"20240118T075015Z","status":"completed","uuid":"7afd5ef7-70a1-4929-80f5-64d36cebcf1d","tags":["feat"]}
+{"description":"build a deb package","entry":"20240119T081607Z","modified":"20240119T081607Z","status":"pending","uuid":"272a1416-7739-433a-9c65-083ddba17868","tags":["feat"]}
+{"description":"build a rpm package","entry":"20240119T081619Z","modified":"20240119T081619Z","status":"pending","uuid":"0f7d805b-9eb9-43e4-a210-f12698f304f8","tags":["feat"]}
+{"description":"experiment a way to use docker to create executable package","entry":"20240119T081638Z","modified":"20240119T081638Z","status":"pending","uuid":"db0caad8-b58b-4ed9-b2b2-b932236a326a","tags":["feat"]}
+{"description":"experiment a way to use docker to create executable package","entry":"20240119T081638Z","modified":"20240119T081644Z","start":"20240119T081644Z","status":"pending","uuid":"db0caad8-b58b-4ed9-b2b2-b932236a326a","tags":["feat"]}

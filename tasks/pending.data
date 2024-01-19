@@ -2,3 +2,6 @@
 [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705411781" status:"pending" tags:"feat" tags_feat:"x" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
 [description:"allow multiple definitions" entry:"1705505645" modified:"1705505649" status:"pending" tags:"feat" tags_feat:"x" uuid:"ee7b707e-bf8e-4aa5-86f9-c039ff273d53"]
 [description:"output some statistical data with a large number (configurable) of throws" entry:"1705505709" modified:"1705505732" status:"pending" tags:"feat" tags_feat:"x" uuid:"84c51e5d-8276-4fd5-a389-54ad16b62402"]
+[description:"build a deb package" entry:"1705652167" modified:"1705652167" status:"pending" tags:"feat" tags_feat:"x" uuid:"272a1416-7739-433a-9c65-083ddba17868"]
+[description:"build a rpm package" entry:"1705652179" modified:"1705652179" status:"pending" tags:"feat" tags_feat:"x" uuid:"0f7d805b-9eb9-43e4-a210-f12698f304f8"]
+[description:"experiment a way to use docker to create executable package" entry:"1705652198" modified:"1705652204" start:"1705652204" status:"pending" tags:"feat" tags_feat:"x" uuid:"db0caad8-b58b-4ed9-b2b2-b932236a326a"]
