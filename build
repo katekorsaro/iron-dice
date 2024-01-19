@@ -1,0 +1,9 @@
+echo "info: building executable package"
+cargo build --release -v
+
+echo "info: building deb package"
+cargo deb -v
+
+echo "info: building rpm package"
+cargo rpm init
+cargo rpm build -v
