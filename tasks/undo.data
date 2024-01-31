@@ -380,3 +380,14 @@ time 1705656519
 old [description:"refine build script in order to collect artifacts" entry:"1705656514" modified:"1705656514" status:"pending" uuid:"ce7725f8-88bb-458c-a21e-74ae61fd6fd5"]
 new [description:"refine build script in order to collect artifacts" entry:"1705656514" modified:"1705656519" status:"pending" tags:"feat" tags_feat:"x" uuid:"ce7725f8-88bb-458c-a21e-74ae61fd6fd5"]
 ---
+time 1706701858
+old [description:"allow multiple definitions" entry:"1705505645" modified:"1705505649" status:"pending" tags:"feat" tags_feat:"x" uuid:"ee7b707e-bf8e-4aa5-86f9-c039ff273d53"]
+new [description:"allow multiple definitions" entry:"1705505645" modified:"1706701858" start:"1706701858" status:"pending" tags:"feat" tags_feat:"x" uuid:"ee7b707e-bf8e-4aa5-86f9-c039ff273d53"]
+---
+time 1706702141
+old [description:"allow multiple definitions" entry:"1705505645" modified:"1706701858" start:"1706701858" status:"pending" tags:"feat" tags_feat:"x" uuid:"ee7b707e-bf8e-4aa5-86f9-c039ff273d53"]
+new [description:"allow multiple definitions" end:"1706702141" entry:"1705505645" modified:"1706702141" status:"completed" tags:"feat" tags_feat:"x" uuid:"ee7b707e-bf8e-4aa5-86f9-c039ff273d53"]
+---
+time 1706702154
+new [description:"rewrite help" entry:"1706702154" modified:"1706702154" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"8a66eec8-7491-44c0-9df5-84d4f2b23766"]
+---

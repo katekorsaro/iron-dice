@@ -103,3 +103,6 @@
 {"description":"build a rpm package","end":"20240119T092131Z","entry":"20240119T081619Z","modified":"20240119T092131Z","status":"completed","uuid":"0f7d805b-9eb9-43e4-a210-f12698f304f8","tags":["feat"]}
 {"description":"refine build script in order to collect artifacts","entry":"20240119T092834Z","modified":"20240119T092834Z","status":"pending","uuid":"ce7725f8-88bb-458c-a21e-74ae61fd6fd5"}
 {"description":"refine build script in order to collect artifacts","entry":"20240119T092834Z","modified":"20240119T092839Z","status":"pending","uuid":"ce7725f8-88bb-458c-a21e-74ae61fd6fd5","tags":["feat"]}
+{"description":"allow multiple definitions","entry":"20240117T153405Z","modified":"20240131T115058Z","start":"20240131T115058Z","status":"pending","uuid":"ee7b707e-bf8e-4aa5-86f9-c039ff273d53","tags":["feat"]}
+{"description":"allow multiple definitions","end":"20240131T115541Z","entry":"20240117T153405Z","modified":"20240131T115541Z","status":"completed","uuid":"ee7b707e-bf8e-4aa5-86f9-c039ff273d53","tags":["feat"]}
+{"description":"rewrite help","entry":"20240131T115554Z","modified":"20240131T115554Z","priority":"M","status":"pending","uuid":"8a66eec8-7491-44c0-9df5-84d4f2b23766","tags":["feat"]}

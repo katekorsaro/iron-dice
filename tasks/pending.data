@@ -1,6 +1,6 @@
 [description:"find a way to raise an error during equality test when adding a new prop in roller" entry:"1705056815" modified:"1705473876" status:"pending" tags:"feat" tags_feat:"x" uuid:"a4bde460-0996-4124-9e33-cf7805cb0409"]
 [description:"hardening. prevent absurd combinations" entry:"1705057220" modified:"1705411781" status:"pending" tags:"feat" tags_feat:"x" uuid:"6fd22945-d0de-4a58-bbc7-db31797606ff"]
-[description:"allow multiple definitions" entry:"1705505645" modified:"1705505649" status:"pending" tags:"feat" tags_feat:"x" uuid:"ee7b707e-bf8e-4aa5-86f9-c039ff273d53"]
 [description:"output some statistical data with a large number (configurable) of throws" entry:"1705505709" modified:"1705505732" status:"pending" tags:"feat" tags_feat:"x" uuid:"84c51e5d-8276-4fd5-a389-54ad16b62402"]
 [description:"experiment a way to use docker to create executable package" entry:"1705652198" modified:"1705654126" status:"pending" tags:"feat" tags_feat:"x" uuid:"db0caad8-b58b-4ed9-b2b2-b932236a326a"]
 [description:"refine build script in order to collect artifacts" entry:"1705656514" modified:"1705656519" status:"pending" tags:"feat" tags_feat:"x" uuid:"ce7725f8-88bb-458c-a21e-74ae61fd6fd5"]
+[description:"rewrite help" entry:"1706702154" modified:"1706702154" priority:"M" status:"pending" tags:"feat" tags_feat:"x" uuid:"8a66eec8-7491-44c0-9df5-84d4f2b23766"]
